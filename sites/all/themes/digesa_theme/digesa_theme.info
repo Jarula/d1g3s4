@@ -1,0 +1,10 @@
+name = Digesa Theme
+description = This is a sub-theme of sub-theme Unsemantic Theme of theme Omega 4 (responsive, unsemantic).
+version = 1.0
+core = 7.x
+base theme = unsemantic_theme
+
+stylesheets[all][] = css/global.css
+stylesheets[all and (max-width:750px)][] = css/global-responsive.css
+
+plugins[panels][layouts] = layouts
