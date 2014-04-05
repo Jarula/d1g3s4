@@ -6,5 +6,3 @@ base theme = unsemantic_theme
 
 stylesheets[all][] = css/global.css
 stylesheets[all and (max-width:750px)][] = css/global-responsive.css
-
-plugins[panels][layouts] = layouts
