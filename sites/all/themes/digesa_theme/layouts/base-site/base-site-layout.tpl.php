@@ -7,9 +7,9 @@
 			<div class="grid-100 grid-parent">
 				<?php print render($page['header_search']); ?>
 			</div>
-			<div class="grid-100 grid-parent">
+			<nav id="main-menu" class="grid-100 grid-parent">
 				<?php print render($page['header_menu']); ?>
-			</div>
+			</nav>
 		</div>
 	</div>
 </header>
