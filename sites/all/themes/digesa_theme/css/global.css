@@ -1,8 +1,15 @@
 body {
   font: 16px/1em "Lato", "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
-  font-weight: 300;
-  background-color: #fbf9f6;
-  color: #333333;
+  font-weight: normal;
+  background-color: #161616;
+  color: #bababa;
+  background: transparent url(../images/trama.gif) repeat;
+}
+
+/* HEADER */
+.logo img {
+	width: 50%;
+	height: 50%;
 }
 
 pre,
@@ -81,4 +88,3 @@ ul.breadcrumb li a:hover {
   max-width: 100%;
   height: auto !important;
 }
-
