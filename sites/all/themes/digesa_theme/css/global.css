@@ -1,0 +1,84 @@
+body {
+  font: 16px/1em "Lato", "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-weight: 300;
+  background-color: #fbf9f6;
+  color: #333333;
+}
+
+pre,
+code {
+  font-family: "DejaVu Sans Mono", Monaco, Consolas, monospace;
+}
+
+hr {
+  border: 0 #cccccc solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+
+h1.page-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border-bottom: dotted 1px #b40818;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.2em;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+ 
+ul.breadcrumb {
+  margin: 10px;
+  text-align: right;
+}
+
+ul.breadcrumb li {
+  display: inline-block;
+  font-size: 0.8em;
+  color: #333333;
+  margin-right: 4px;
+}
+
+ul.breadcrumb li:last-child:after {
+  content: "";
+}
+
+ul.breadcrumb li:after {
+  content: " >";
+}
+
+ul.breadcrumb li a {
+  color: #333333;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color: #b40818;
+  text-decoration: underline;
+}
+
+.grid-5 img, .grid-10 img, .grid-15 img, .grid-20 img, .grid-25 img, .grid-30 img, .grid-35 img, .grid-40 img, .grid-45 img, .grid-50 img, .grid-55 img, .grid-60 img, .grid-65 img, .grid-70 img, .grid-75 img, .grid-80 img, .grid-85 img, .grid-90 img, .grid-95 img, .grid-100 img, .grid-33 img, .grid-66 img {
+  max-width: 100%;
+  height: auto !important;
+}
+
