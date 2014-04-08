@@ -1,0 +1,84 @@
+<?php
+/**
+ * @file
+ * Code for the Widget Text.
+ */
+
+function widget_text_form_alter(&$form, &$form_state, $form_id) {
+
+	if (isset($form['#entity_type']) && $form['#entity_type'] == 'fieldable_panels_pane') {
+		$form['link'] = NULL;
+		$form['view_mode'] = NULL;
+	}
+
+}
+
+function widget_text_ctools_plugin_directory($owner, $plugin_type) {
+
+	if (($owner == 'ctools' && $plugin_type == 'content_types') || ($owner == 'panels' && $plugin_type == "layouts")) {
+		return "plugins/$plugin_type";
+	}elseif ($owner == 'vud') {
+  		return "plugins/$plugin_type";
+	}
+}
+
+function widget_text_entity_info_alter(&$entity_info) {
+
+	$entity_info['fieldable_panels_pane']['bundles']['widget_text'] = array(
+			'label' => 'Widget Texto',
+			'category' => 'Jarula Widgets',
+			'pane top level' => TRUE, // set to true to make this show as a top level icon
+			//'pane icon' => '/path/to/custom/icon/for/this/pane.png',
+			'admin' => array(
+			  'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+			  'bundle argument' => 4,
+			  // Note that this has all _ replaced with - from the bundle name.
+			  'real path' => 'admin/structure/fieldable-panels-panes/manage/widget_text',
+			  'access arguments' => array('Administer content'),
+		),
+	);
+
+}
+
+function widget_text_preprocess_panels_pane(&$vars) {
+
+	$entity = &$vars['content'];
+	$vars['title'] = '';
+
+	if ( isset($entity['#bundle']) && $entity['#entity_type'] == 'fieldable_panels_pane' && $entity['#bundle'] == 'widget_text') {
+                                
+		$wrapper = $entity['field_wrapper'][0]['#markup'];
+
+		$arrayText = array_keys($entity['field_text']);
+
+		foreach ($arrayText as $item){
+			if(is_numeric($item)){
+				$element = $entity['field_text'][$item];
+				foreach($element['entity']['field_collection_item'] as $fieldCollection){
+					(isset($fieldCollection['title_field'])) ? $title = '<h2>' . $fieldCollection['title_field'][0]['#markup'] . '</h2>' : $title = '';
+					(isset($fieldCollection['field_description'])) ? $description = '<p>' . $fieldCollection['field_description'][0]['#markup'] . '</p>' : $description = '';
+					$texts[] = array(
+						'title' => $title, 
+						'description' => $description,
+					);
+				}
+			}
+		}
+		
+		$widget_text = array('wrapper' => $wrapper, 'texts' => $texts);
+
+		$vars['content'] = theme('widget_text_widget_text', array('widget_text' => $widget_text));
+	}
+
+}
+
+function widget_text_theme() {
+
+	return array(
+		'widget_text_widget_text' => array(
+			'template' => 'widget-text-widget-text',
+			'path' => drupal_get_path('module', 'widget_text') . '/templates',
+		)
+	);
+
+}
