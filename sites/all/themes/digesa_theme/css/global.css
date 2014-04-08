@@ -7,9 +7,105 @@ body {
 }
 
 /* HEADER */
-.logo img {
-
+header {
+	padding: 20px 0;
+	background: #000;
+	margin-bottom: 20px;
 }
+
+.logo {}
+
+.logo img {
+	width: 160px;
+	height: 62px;
+}
+
+.search-bar {
+	margin-bottom: 4px;
+}
+
+.search-bar .views-exposed-widgets {
+	float: right;
+	border-bottom: 1px solid #535353;
+	padding-bottom: 5px;
+}
+
+.search-bar .views-exposed-widgets .views-exposed-widget label {
+	display: none;
+}
+
+.search-bar input.form-text {
+	background: #000;
+	border: none;
+}
+
+.search-bar .views-exposed-form .views-exposed-widget {
+	padding: 0;
+}
+
+.views-exposed-form .views-exposed-widget .form-submit {
+	margin-top: 0;
+	background: url(../images/search-button.jpg);
+	font-size: 0;
+	width: 27px;
+	height: 25px;
+	border: none;
+}
+
+.menu {}
+
+.menu li {
+	display: inline-block;
+	font-family: helvetica, Arial;
+	text-transform: uppercase;
+	margin-left: 20px;
+}
+
+.menu li a {
+	color: #b5b5b5;
+}
+
+/* FOOTER */
+
+footer {
+	border-top: 1px solid #FCC900;
+	margin-top: 20px;
+}
+
+.footer-menu {
+	background: #161616;
+	padding: 20px 0;
+}
+
+.footer-menu .menu {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.footer-menu .menu li {
+	font-size: 12px;
+}
+
+.footer-copyright {
+	background: #000;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.footer-copyright p {
+	font-size: 11px;
+}
+
+.footer-copyright img {
+	float: none !important;
+}
+
+
+
+
+
+
+
 
 pre,
 code {
