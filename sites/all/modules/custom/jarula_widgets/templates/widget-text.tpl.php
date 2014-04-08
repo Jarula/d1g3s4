@@ -1,3 +1,4 @@
+<?php dsm("iidasidasd"); ?>
 <?php if($widget_text['wrapper'] == 'ul'){ $intWrapper = 'li';} else { $intWrapper = 'div';}
 print '<'.$widget_text['wrapper']; ?> class="widget-text">
 <?php

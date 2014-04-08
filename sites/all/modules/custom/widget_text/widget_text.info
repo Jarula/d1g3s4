@@ -1,9 +1,0 @@
-name = Widget Texto
-core = 7.x
-package = Jarula Widgets
-
-version = "7.x-1.0.0"
-description = "Widget para agregar Textos Multiples"
-configure = admin/structure/fieldable-panels-panes/manage/widget-text
-
-dependencies[] = field_collection
