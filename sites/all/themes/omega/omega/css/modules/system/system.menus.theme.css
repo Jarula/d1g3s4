@@ -9,7 +9,7 @@
 .menu {
   border: none;
   list-style: none;
-  text-align: right;
+  text-align: left;
   /* LTR */
   /* Menu Item Hierarchy Modifiers */
 }
@@ -23,8 +23,8 @@
   list-style-type: disc;
 }
 .menu .leaf {
-  /*list-style-image: url('../../../images/misc/menu-leaf.png?1379458577');
-  list-style-type: square;*/
+  list-style-image: url('../../../images/misc/menu-leaf.png?1379458577');
+  list-style-type: square;
 }
 
 /* Menu State Modifiers */
