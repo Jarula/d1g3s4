@@ -51,8 +51,9 @@ header {
 	height: 25px;
 	border: none;
 }
-
-.menu {}
+.menu {
+  text-align: right;
+}
 
 .menu li {
 	display: inline-block;
@@ -63,6 +64,11 @@ header {
 
 .menu li a {
 	color: #b5b5b5;
+}
+
+.menu .leaf {
+  list-style-image: none;
+  list-style-type: none;
 }
 
 /* FOOTER */
