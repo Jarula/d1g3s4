@@ -37,6 +37,8 @@ header {
 .search-bar input.form-text {
 	background: #000;
 	border: none;
+  color: #b5b5b5;
+  margin-top: 5px;
 }
 
 .search-bar .views-exposed-form .views-exposed-widget {
