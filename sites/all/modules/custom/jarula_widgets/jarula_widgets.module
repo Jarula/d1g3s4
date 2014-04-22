@@ -235,10 +235,13 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 				$view = views_get_view('jarula_widgets');
 				$view->set_display('items_list');
-				if(!empty($entity['field_widgettype']['#items'][0]['value'])) {
+				if($entity['field_widgettype']['#items'][0]['value'] != '0') {
 					$nid = arg(1);
-					$view->set_arguments(array($nid));
+					$view->set_arguments(array($nid, 'all'));
 					$view->set_items_per_page(3);
+				} else {
+					$tid = arg(2);
+					$view->set_arguments(array('all', $tid));
 				}
 				$view->execute();
 
@@ -264,8 +267,12 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					$widget_itemslist[] = array('title' => $title, 'street' => $street, 'image' => $image, 'status' => $status, 'destination' => $destination);
 
 				}
-	
-                                $vars['content'] = theme('widget_itemslist', array('widget_itemslist' => $widget_itemslist));
+
+				if(empty($widget_itemslist)) {
+					$vars['content'] = 'No hay resultados...';
+				} else {
+                                	$vars['content'] = theme('widget_itemslist', array('widget_itemslist' => $widget_itemslist));
+				}
 
 			break;
 
