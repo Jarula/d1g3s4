@@ -58,9 +58,9 @@
       </div>
     </div>
 	
-    <?php !panels_get_current_page_display() ? print '<div class="grid-container"><div class="grid-100">' : ''; ?>
+    <div class="grid-container"><div class="grid-100">
       <?php print render($page['content']); ?>
-    <?php !panels_get_current_page_display() ? print '</div></div>' : ''; ?>
+    </div>
   </div>
   
   <footer class="grid-100 grid-parent" role="contentinfo" id="footer">

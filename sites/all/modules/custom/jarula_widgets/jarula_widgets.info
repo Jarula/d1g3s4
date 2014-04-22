@@ -3,7 +3,7 @@ core = 7.x
 package = Jarula Widgets
 
 version = "7.x-1.0.0"
-description = "Paquete de Widgets realizados por Jarula. Imagenes, Texto"
+description = "Paquete de Widgets realizados por Jarula. Imagenes, Texto, Profile, Link"
 configure = admin/structure/fieldable-panels-panes/
 
 dependencies[] = image

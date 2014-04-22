@@ -13,6 +13,7 @@ regions[header_search]       = Search
 regions[header_menu]       = Menu
 
 ; ---- Main
+regions[main_top]      = Main Top
 regions[main]      = Main
 
 ; ---- Footer

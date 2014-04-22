@@ -1,3 +1,4 @@
+/* BASE */
 body {
   font: 16px/1em "Lato", "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
   font-weight: normal;
@@ -5,115 +6,6 @@ body {
   color: #bababa;
   background: transparent url(../images/trama.gif) repeat;
 }
-
-/* HEADER */
-header {
-	padding: 20px 0;
-	background: #000;
-	margin-bottom: 20px;
-}
-
-.logo {}
-
-.logo img {
-	width: 160px;
-	height: 62px;
-}
-
-.search-bar {
-	margin-bottom: 4px;
-}
-
-.search-bar .views-exposed-widgets {
-	float: right;
-	border-bottom: 1px solid #535353;
-	padding-bottom: 5px;
-}
-
-.search-bar .views-exposed-widgets .views-exposed-widget label {
-	display: none;
-}
-
-.search-bar input.form-text {
-	background: #000;
-	border: none;
-  color: #b5b5b5;
-  margin-top: 5px;
-}
-
-.search-bar .views-exposed-form .views-exposed-widget {
-	padding: 0;
-}
-
-.views-exposed-form .views-exposed-widget .form-submit {
-	margin-top: 0;
-	background: url(../images/search-button.jpg);
-	font-size: 0;
-	width: 27px;
-	height: 25px;
-	border: none;
-}
-.menu {
-  text-align: right;
-}
-
-.menu li {
-	display: inline-block;
-	font-family: helvetica, Arial;
-	text-transform: uppercase;
-	margin-left: 20px;
-}
-
-.menu li a {
-	color: #b5b5b5;
-}
-
-.menu .leaf {
-  list-style-image: none;
-  list-style-type: none;
-}
-
-/* FOOTER */
-
-footer {
-	border-top: 1px solid #FCC900;
-	margin-top: 20px;
-}
-
-.footer-menu {
-	background: #161616;
-	padding: 20px 0;
-}
-
-.footer-menu .menu {
-	text-align: center;
-	margin-bottom: 0;
-}
-
-.footer-menu .menu li {
-	font-size: 12px;
-}
-
-.footer-copyright {
-	background: #000;
-	padding: 20px 0;
-	text-align: center;
-}
-
-.footer-copyright p {
-	font-size: 11px;
-}
-
-.footer-copyright img {
-	float: none !important;
-}
-
-
-
-
-
-
-
 
 pre,
 code {
@@ -190,4 +82,165 @@ ul.breadcrumb li a:hover {
 .grid-5 img, .grid-10 img, .grid-15 img, .grid-20 img, .grid-25 img, .grid-30 img, .grid-35 img, .grid-40 img, .grid-45 img, .grid-50 img, .grid-55 img, .grid-60 img, .grid-65 img, .grid-70 img, .grid-75 img, .grid-80 img, .grid-85 img, .grid-90 img, .grid-95 img, .grid-100 img, .grid-33 img, .grid-66 img {
   max-width: 100%;
   height: auto !important;
+}
+
+
+/* GLOBAL */
+.full-width {
+	background-color: #000000;
+	padding: 2% 0;
+}
+
+
+/* HEADER */
+header {
+        padding: 20px 0;
+        background: #000;
+        margin-bottom: 20px;
+}
+
+.front header {
+	margin-bottom: 0;
+}
+
+.search-bar {
+        margin-bottom: 4px;
+}
+
+.search-bar .views-exposed-widgets {
+        float: right;
+        border-bottom: 1px solid #535353;
+        padding-bottom: 5px;
+}
+
+.search-bar .views-exposed-widgets .views-exposed-widget label {
+        display: none;
+}
+
+.search-bar input.form-text {
+        background: #000;
+        border: none;
+        color: #b5b5b5;
+        margin-top: 5px;
+}
+
+.search-bar .views-exposed-form .views-exposed-widget {
+        padding: 0;
+}
+
+.views-exposed-form .views-exposed-widget .form-submit {
+        margin-top: 0;
+        background: url(../images/search-button.jpg);
+        font-size: 0;
+        width: 27px;
+        height: 25px;
+        border: none;
+}
+
+.menu {
+        text-align: right;
+}
+
+.menu li {
+        display: inline-block;
+        font-family: helvetica, Arial;
+        text-transform: uppercase;
+        margin-left: 20px;
+}
+
+.menu li a {
+        color: #b5b5b5;
+}
+
+.menu .leaf {
+        list-style-image: none;
+        list-style-type: none;
+}
+
+
+/* FOOTER */
+footer {
+        border-top: 1px solid #FCC900;
+        margin-top: 20px;
+}
+
+.front footer {
+        margin-top: 0;
+}
+
+.footer-menu {
+        background: #161616;
+        padding: 20px 0;
+}
+
+.footer-menu .menu {
+        text-align: center;
+        margin-bottom: 0;
+}
+
+.footer-menu .menu li {
+        font-size: 12px;
+}
+
+.footer-copyright {
+        background: #000;
+        padding: 20px 0;
+        text-align: center;
+}
+
+.footer-copyright p {
+        font-size: 11px;
+}
+
+.footer-copyright img {
+        float: none !important;
+}
+
+
+
+/* WIDGET LINK */
+.pane-bundle-widget-link .link-item {
+	position: relative;
+}
+
+.pane-bundle-widget-link .link-item .title {
+	font-size: 0.8em;
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	bottom: 0;
+	padding: 8% 0;
+	overflow: hidden;
+	text-transform: uppercase;
+	text-align: center;
+	color: #eeeeee;
+	line-height: normal;
+	border-top-width: 0;
+	border-top-style: solid;
+	border-top-color: #2d2d2d;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJkMmQyZCIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJkMmQyZCIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-linear-gradient(top,  rgba(45,45,45,0.8) 0%, rgba(45,45,45,0.8) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(45,45,45,0.8)), color-stop(100%,rgba(45,45,45,0.8)));
+	background: -webkit-linear-gradient(top,  rgba(45,45,45,0.8) 0%,rgba(45,45,45,0.8) 100%);
+	background: -o-linear-gradient(top,  rgba(45,45,45,0.8) 0%,rgba(45,45,45,0.8) 100%);
+	background: -ms-linear-gradient(top,  rgba(45,45,45,0.8) 0%,rgba(45,45,45,0.8) 100%);
+	background: linear-gradient(to bottom,  rgba(45,45,45,0.8) 0%,rgba(45,45,45,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc2d2d2d', endColorstr='#cc2d2d2d',GradientType=0 );
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+}
+
+.pane-bundle-widget-link .link-item:hover .title {
+	font-size: 0.9em;
+	padding: 12% 0 10% 0;
+	color: #ffffff;
+	border-top-width: 8px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }

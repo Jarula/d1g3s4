@@ -70,6 +70,48 @@ function jarula_widgets_entity_info_alter(&$entity_info) {
                 ),
         );
 
+        $entity_info['fieldable_panels_pane']['bundles']['widget_link'] = array(
+                        'label' => 'Widget Link',
+                        'category' => 'Jarula Widgets',
+                        'pane top level' => TRUE, // set to true to make this show as a top level icon
+                        //'pane icon' => '/path/to/custom/icon/for/this/pane.png',
+                        'admin' => array(
+                          'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+                          'bundle argument' => 4,
+                          // Note that this has all _ replaced with - from the bundle name.
+                          'real path' => 'admin/structure/fieldable-panels-panes/manage/widget_link',
+                          'access arguments' => array('Administer content'),
+                ),
+        );
+
+        $entity_info['fieldable_panels_pane']['bundles']['widget_itemslist'] = array(
+                        'label' => 'Widget Items List',
+                        'category' => 'Jarula Widgets',
+                        'pane top level' => TRUE, // set to true to make this show as a top level icon
+                        //'pane icon' => '/path/to/custom/icon/for/this/pane.png',
+                        'admin' => array(
+                          'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+                          'bundle argument' => 4,
+                          // Note that this has all _ replaced with - from the bundle name.
+                          'real path' => 'admin/structure/fieldable-panels-panes/manage/widget_itemslist',
+                          'access arguments' => array('Administer content'),
+                ),
+        );
+
+        $entity_info['fieldable_panels_pane']['bundles']['widget_info'] = array(
+                        'label' => 'Widget Info',
+                        'category' => 'Jarula Widgets',
+                        'pane top level' => TRUE, // set to true to make this show as a top level icon
+                        //'pane icon' => '/path/to/custom/icon/for/this/pane.png',
+                        'admin' => array(
+                          'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+                          'bundle argument' => 4,
+                          // Note that this has all _ replaced with - from the bundle name.
+                          'real path' => 'admin/structure/fieldable-panels-panes/manage/widget_info',
+                          'access arguments' => array('Administer content'),
+                ),
+        );
+
 }
 
 function jarula_widgets_preprocess_panels_pane(&$vars) {
@@ -158,12 +200,97 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 			break;
 
-			case 'widget_profile':
+			case 'widget_link':
 
-				
+                                $arrayText = array_keys($entity['field_link']);
+
+                                foreach ($arrayText as $item){
+                                        if(is_numeric($item)){
+                                                $element = $entity['field_link'][$item];
+                                                foreach($element['entity']['field_collection_item'] as $fieldCollection){
+	                                              	if(isset($fieldCollection['field_image'])) {
+								$image = theme( 'image_style', array('style_name' => 'small_square', 'path' => $fieldCollection['field_image'][0]['#item']['uri'], 'alt' => $fieldCollection['field_image'][0]['#item']['alt'], 'title' => $fieldCollection['field_image'][0]['#item']['title']));
+								if(isset($fieldCollection['field_href'])) {
+									$image = l($image, $fieldCollection['field_href'][0]['#element']['url'], array('html' => 'true', 'attributes' => array('title' => $fieldCollection['field_image'][0]['#item']['title'], 'alt' => $fieldCollection['field_image'][0]['#item']['alt'])));
+								}
+							}
+							
+							$title = NULL;
+
+							if(isset($fieldCollection['title_field'])){
+								$title = '<div class="title">'.$fieldCollection['title_field'][0]['#markup'].'</div>';
+							}
+							$widget_link[] = array('link' => $image, 'title' =>$title);
+                                        	}
+					}
+                                }
+
+				$class = $entity['field_class'][0]['#markup'];
+
+                                $vars['content'] = theme('widget_link', array('widget_link' => $widget_link, 'class' => $class));
 
 			break;
 
+			case 'widget_itemslist':
+
+				$view = views_get_view('jarula_widgets');
+				$view->set_display('items_list');
+				if(!empty($entity['field_widgettype']['#items'][0]['value'])) {
+					$nid = arg(1);
+					$view->set_arguments(array($nid));
+					$view->set_items_per_page(3);
+				}
+				$view->execute();
+
+				foreach($view->result as $key => $result) {
+
+					$title = $result->node_title;
+
+					foreach($result->field_field_address as $adress) {
+						$key = $adress['raw']['value'];
+						$street = $adress['rendered']['entity']['field_collection_item'][$key]['field_street']['#items'][0]['safe_value'];
+					}
+
+					for($i=0;$i<1;$i++){
+                                                $key = $result->field_field_slide[0]['raw']['value'];
+						$uri = $result->field_field_slide[0]['rendered']['entity']['field_collection_item'][$key]['field_image']['#items'][0]['uri'];
+                                        }
+					$image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $uri, 'alt' => $title));
+
+					$status = isset($result->field_field_status[0]['rendered']['#markup']) ? theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => 'label'),'#value' => $result->field_field_status[0]['rendered']['#markup']))) : NULL;
+
+					$destination = url('node/'.$result->nid);
+
+					$widget_itemslist[] = array('title' => $title, 'street' => $street, 'image' => $image, 'status' => $status, 'destination' => $destination);
+
+				}
+	
+                                $vars['content'] = theme('widget_itemslist', array('widget_itemslist' => $widget_itemslist));
+
+			break;
+
+			case 'widget_info':
+
+				$nid = arg(1);
+				$node = node_load($nid);
+
+				$title = $node->title;
+				$info = field_get_items('node', $node, 'field_info');
+				$info = isset($info[0]['value']) ? $info[0]['value'] : NULL;
+				$status = field_get_items('node', $node, 'field_status');
+				$status = isset($status[0]['value']) ? theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => 'label'),'#value' => $status[0]['value']))) : NULL;
+				$address = field_get_items('node', $node, 'field_address');
+				foreach($address as $street) {
+                                	$eid = $street['value'];
+					$address = entity_load('field_collection_item', array($eid));
+					$address = $address[$eid]->field_street['und'][0]['safe_value'];
+                                }
+
+				$widget_info = array('title' => $title, 'info' => $info, 'status' => $status, 'street' => $address);
+
+				$vars['content'] = theme('widget_info', array('widget_info' => $widget_info));
+
+			break;
         	}
 	}
 }
@@ -184,6 +311,19 @@ function jarula_widgets_theme() {
                         'template' => 'widget-profile',
                         'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
                 ),
+                'widget_link' => array(
+                        'template' => 'widget-link',
+                        'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
+                ),
+                'widget_itemslist' => array(
+                        'template' => 'widget-itemslist',
+                        'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
+                ),
+                'widget_info' => array(
+                        'template' => 'widget-info',
+                        'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
+                ),
+
         );
 
 }

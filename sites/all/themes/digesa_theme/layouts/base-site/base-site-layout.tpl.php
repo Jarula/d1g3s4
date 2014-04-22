@@ -14,17 +14,18 @@
 	</div>
 </header>
 <main>
-	<div class="grid-container grid-parent">
-		<?php print render($page['main']); ?>
-	</div>
+	<div class="grid-container">
+		<?php print render($page['main_top']); ?>
+        </div>
+	<?php print render($page['main']); ?>
 </main>
 <footer>
-	<div class="grid-100 footer-menu">
+	<div class="grid-100 footer-menu clearfix">
 		<div class="grid-container">
 			<?php print render($page['footer_menu']); ?>
 		</div>
 	</div>
-	<div class="grid-100 footer-copyright">
+	<div class="grid-100 footer-copyright clearfix">
 		<div class="grid-container">
 			<?php print render($page['footer_copyright']); ?>
 		</div>

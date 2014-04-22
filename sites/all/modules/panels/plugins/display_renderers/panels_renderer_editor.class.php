@@ -471,7 +471,7 @@ class panels_renderer_editor extends panels_renderer_standard {
   'style' => 'Style',
   'visibility' => 'Visibility rules',
   'lock' => 'Locking',
-  'cache' => 'Caching'
+  'cache' => 'Caching',
     ) as $category => $label) {
       $dropdown_links[] = array(
         'title' => '<hr />',
