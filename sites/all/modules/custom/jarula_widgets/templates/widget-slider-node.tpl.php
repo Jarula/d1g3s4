@@ -10,7 +10,12 @@
   jQuery(window).load(function(){
     jQuery('.flexslider').flexslider({
       animation: "slide",
-      slideshow: false,
+      controlNav: false,
+      video: true,
+      smoothHeight: true,
+      pauseOnAction: true,
+      prevText: 'Anterior',
+      nextText: 'Siguiente',
       start: function(slider){}
     });
   });
