@@ -293,7 +293,6 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					$destination = url('node/'.$result->nid);
 
 					$widget_itemslist[] = array('title' => $title, 'street' => $street, 'image' => $image, 'status' => $status, 'destination' => $destination);
-
 				}
 
 				if(empty($widget_itemslist)) {
@@ -419,6 +418,8 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 			case 'widget_map':
 				$currentNode = $entity['field_currentnode'][0]['#markup'];
+				$nid = false;
+
                                 if (arg(0) == 'node' && is_numeric(arg(1))) {
                                         $nid = true;
                                 }
@@ -438,13 +439,35 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                 	                $province = field_get_items('field_collection_item', $address, 'field_province');
                         	        $province = isset($province[0]['value']) ? $province[0]['value'] : NULL;
 
-					$address = $street.', '.$city.', '.$province;
+					$markersArray = array($street.', '.$city.', '.$province);
+
+					$zoom = '16';
+                                        $map_size_height = '200px';
 
 					$isMap = true;
 
 				} else {
-					$latitude = '-34.6037232';
-					$longitude = '-58.381593';
+
+                        	        $view = views_get_view('jarula_widgets');
+                                	$view->set_display('map_address');
+                	                $tid = arg(2);
+        	                        $view->set_arguments(array($tid));
+	                                $view->execute();
+
+					foreach($view->result as $result) {
+						$address = field_collection_item_load(array($result->field_field_address[0]['raw']['value']));
+						$street = field_get_items('field_collection_item', $address, 'field_street');
+                                        	$street = isset($street[0]['safe_value']) ? $street[0]['safe_value'] : NULL;
+
+                                	        $city = field_get_items('field_collection_item', $address, 'field_city');
+                        	                $city = isset($city[0]['safe_value']) ? $city[0]['safe_value'] : NULL;
+
+                	                        $province = field_get_items('field_collection_item', $address, 'field_province');
+        	                                $province = isset($province[0]['value']) ? $province[0]['value'] : NULL;
+
+	                                        $markersArray[] = $street.', '.$city.', '.$province;
+					}
+
                                         $zoom = '12';
 					$map_size_height = '400px';
 
@@ -457,20 +480,20 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                         $map_language = 'Spanish';
                                         $maptype = 'google.maps.MapTypeId.ROADMAP';
 
-                                        $request_url = "http://maps.googleapis.com/maps/api/geocode/xml?address=".$address."&sensor=true";
-                                        $xml = simplexml_load_file($request_url) or die("url not loading");
-                                        $status = $xml->status;
-                                        if ($status=="OK") {
-                                                $latitude = (string)$xml->result->geometry->location->lat;
-                                                $longitude = (string)$xml->result->geometry->location->lng;
-                                                $zoom = '16';
-                                                $map_size_height = '200px';
-                                        }
+					foreach($markersArray as $mark){
+	                                        $request_url = "http://maps.googleapis.com/maps/api/geocode/xml?address=".$mark."&sensor=true";
+                                        	$xml = simplexml_load_file($request_url) or die("url not loading");
+                                	        $status = $xml->status;
+                        	                if ($status=="OK") {
+                	                                $latitude = (string)$xml->result->geometry->location->lat;
+        	                                        $longitude = (string)$xml->result->geometry->location->lng;
+							$markers[] = array('<h1>Buenos Aires</h1><p>Capital de la Republica Arentina</p><a href="node/1">Ir a la Web</a>', $latitude, $longitude);
+	                                        }
+					}
 
-					$array_js[] = array(
+					$array_js = array(
                                                 'type' => 'map',
-                                                'latitude' => $latitude,
-                                                'longitude' => $longitude,
+                                                'markers' => $markers,
                                                 'zoom' => $zoom,
                                                 'width' => $map_size_width,
                                                 'height' => $map_size_height,
@@ -487,7 +510,6 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 				} else {
         	                        $vars['content'] = 'No hay mapa disponible.';
 	                        }
-
 					
 			break;
         	}
