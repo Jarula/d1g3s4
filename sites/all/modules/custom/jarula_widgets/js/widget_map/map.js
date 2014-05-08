@@ -42,25 +42,22 @@ function initialize() {
 
   for (var i = 0; i < markers.length; i++) {
     var infoWindow = new google.maps.InfoWindow(), marker, i;
-    var infoWindowContent = markers[i][0];
     var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
     bounds.extend(position);
     var marker = new google.maps.Marker({
       position: position,
       map: map,
-      title: infoWindowContent,
     });
-
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-            infoWindow.setContent(infoWindowContent);
+            infoWindow.setContent(markers[i][0]);
             infoWindow.open(map, marker);
         }
     })(marker, i));
 
-  }
-
   map.fitBounds(bounds);
+
+  }
   
   var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
       this.setZoom(14);
