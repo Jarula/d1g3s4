@@ -248,3 +248,89 @@ footer {
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
+
+
+/* QUIENES SOMOS */
+
+.pane-page-title {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pane-page-title h1 {
+    font-family: Arial;
+    font-size: 36px;
+    margin: 0;
+}
+
+.widget-text p {
+    line-height: 25px;
+}
+
+.widget-text p + h2 {
+    margin-top: 40px !important;
+}
+
+.widget-text h2 {
+    margin: 10px 0 !important;
+    padding: 0;
+}
+
+.pane-bundle-widget-profile {
+    background: #000;
+    padding-bottom: 10px;
+}
+
+.pane-bundle-widget-profile h2 {
+    font-family: Oswald, Arial;
+    font-size: 24px;
+    color: #ffc700;
+}
+
+.pane-bundle-widget-profile h3,
+.pane-bundle-widget-profile p {
+    font-family: Oswald Light, Arial Narrow;
+    font-size: 24px;
+    margin: 0 10px 0 10px;
+    padding: 0 10px 0 10px;
+    font-weight: normal;
+}
+
+.pane-bundle-widget-profile h3 {
+    color: #bababa;
+}
+
+.pane-bundle-widget-profile p {
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pane-page-title
