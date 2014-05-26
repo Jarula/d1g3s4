@@ -125,6 +125,11 @@ header {
         margin-top: 5px;
 }
 
+.search-bar input[placeholder],
+.search-bar ::-webkit-input-placeholder {
+    color: #555555;
+}
+
 .search-bar .views-exposed-form .views-exposed-widget {
         padding: 0;
 }
@@ -333,28 +338,3 @@ footer {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-pane-page-title
