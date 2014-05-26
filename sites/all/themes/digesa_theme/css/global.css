@@ -267,6 +267,7 @@ footer {
     font-family: Arial;
     font-size: 36px;
     margin: 0;
+    padding-left: 0;
 }
 
 .widget-text p {
@@ -290,9 +291,9 @@ footer {
     margin-top: 40px;
 }
 
-.pane-bundle-widget-profile img {
-    width: 300px;
-    height: 200px;
+.pane-bundle-widget-profile img,
+.pane-bundle-widget-image img {
+    width: 100%;
 }
 
 .pane-bundle-widget-profile h2 {
@@ -333,11 +334,5 @@ footer {
 .pane-bundle-widget-image a:last-child {
     margin-bottom: 0;
 }
-
-.pane-bundle-widget-image img {
-    width: 300px;
-    height: 160px !important;
-}
-
 
 
