@@ -120,7 +120,8 @@ header {
 .search-bar input.form-text {
         background: #000;
         border: none;
-        color: #b5b5b5;
+        color: #555555;
+        font-size: 12px;
         margin-top: 5px;
 }
 
@@ -138,6 +139,7 @@ header {
 }
 
 .menu {
+        margin: 12px 0 0;
         text-align: right;
 }
 
@@ -150,6 +152,8 @@ header {
 
 .menu li a {
         color: #b5b5b5;
+        font-family: Myriad Pro, Arial;
+        font-size: 18px;
 }
 
 .menu .leaf {
@@ -169,7 +173,7 @@ footer {
 }
 
 .footer-menu {
-        background: #161616;
+        background: #222222;
         padding: 20px 0;
 }
 
