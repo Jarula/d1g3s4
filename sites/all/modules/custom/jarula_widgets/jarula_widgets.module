@@ -15,6 +15,25 @@ function jarula_widgets_form_alter(&$form, &$form_state, $form_id) {
 		$form['palabra']['#attributes']['placeholder'] = 'Ingrese su búsqueda';
 	}
 
+        if ($form_id == 'webform_client_form_6' && $form['#id'] == 'webform-client-form-6') {
+		$required = $form['submitted']['nombre_y_apellido']['#required'];
+		if($required == '1'){ $required = ' *'; } else { $required = ''; };
+                $form['submitted']['nombre_y_apellido']['#attributes']['placeholder'] = $form['submitted']['nombre_y_apellido']['#title'].$required;
+
+                $required = $form['submitted']['email']['#required'];
+                if($required == '1'){ $required = ' *'; } else { $required = ''; };
+                $form['submitted']['email']['#attributes']['placeholder'] = $form['submitted']['email']['#title'].$required;
+
+                $required = $form['submitted']['telefono']['#required'];
+                if($required == '1'){ $required = ' *'; } else { $required = ''; };
+                $form['submitted']['telefono']['#attributes']['placeholder'] = $form['submitted']['telefono']['#title'].$required;
+
+                $required = $form['submitted']['mensaje']['#required'];
+                if($required == '1'){ $required = ' *'; } else { $required = ''; };
+                $form['submitted']['mensaje']['#attributes']['placeholder'] = $form['submitted']['mensaje']['#title'].$required;
+
+        }
+
 }
 
 function jarula_widgets_ctools_plugin_directory($owner, $plugin_type) {
@@ -179,8 +198,9 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                 		        if(is_numeric($item)){
                                 		$element = $entity['field_text'][$item];
 		                                foreach($element['entity']['field_collection_item'] as $fieldCollection){
-		                                        (isset($fieldCollection['title_field'])) ? $title = '<h2>' . $fieldCollection['title_field'][0]['#markup'] . '</h2>' : $title = '';
-		                                        (isset($fieldCollection['field_description'])) ? $description = '<p>' . $fieldCollection['field_description'][0]['#markup'] . '</p>' : $description = '';
+                                                        (isset($fieldCollection['field_wtext_class'])) ? $class =  'class="'.$fieldCollection['field_wtext_class'][0]['#markup'].'"' : $class = '';
+		                                        (isset($fieldCollection['title_field'])) ? $title = '<h2 '.$class.'>' . $fieldCollection['title_field'][0]['#markup'] . '</h2>' : $title = '';
+		                                        (isset($fieldCollection['field_description'])) ? $description = '<p '.$class.'>' . $fieldCollection['field_description'][0]['#markup'] . '</p>' : $description = '';
 		                                        $texts[] = array(
 		                                                'title' => $title,
 		                                                'description' => $description,

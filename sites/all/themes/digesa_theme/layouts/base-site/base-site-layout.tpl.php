@@ -17,7 +17,7 @@
 </header>
 <main>
 	<div class="grid-container grid-parent">
-		<div class="grid-80 prefix-10 suffix-10 grid-parent">
+		<div class="grid-80 prefix-10 suffix-10">
 			<?php print render($page['main_top']); ?>
 		</div>
         </div>
