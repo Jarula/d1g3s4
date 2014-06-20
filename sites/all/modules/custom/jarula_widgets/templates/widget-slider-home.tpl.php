@@ -1,11 +1,13 @@
 <div class="flexslider">
   <ul class="slides">
     <?php foreach($widget_slider as $item) {
-      $slide = '<li>';
+      $slide = '<li class="slider-container">';
       (isset($item['link'])) ? $slide .= '<a title="'.$item['title'].'" href="'.$item['link'].'" class="link" >' : '';
       $slide .= $item['image'];
+      $slide .= '<div class="slider-text">';
       $slide .= '<h2 class="title">'.$item['title'].'</h2>';
-      $slide .= '<div class="description">'.$item['description'].'</div>';
+      $slide .= '<p class="description">'.$item['description'].'</p>';
+      $slide .= '</div>';
       (isset($item['link'])) ? $slide .= '</a>' : '';
       $slide .= '</li>';
       print $slide;
@@ -18,8 +20,8 @@
     jQuery('.flexslider').flexslider({
       animation: "slide",
       controlNav: false,
-      prevText: 'Anterior',
-      nextText: 'Siguiente',
+      prevText: '',
+      nextText: '',
       start: function(slider){}
     });
   });

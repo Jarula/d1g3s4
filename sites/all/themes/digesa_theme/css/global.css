@@ -99,7 +99,7 @@ ul.breadcrumb li a:hover {
 
 /* HEADER */
 header {
-        padding: 20px 0;
+        padding: 15px 0;
         background: #000;
         margin-bottom: 20px;
 }
@@ -150,7 +150,7 @@ header {
 }
 
 .menu {
-        margin: 12px 0 0;
+        margin: 5px 0 0;
         text-align: right;
 }
 
@@ -184,8 +184,7 @@ footer .menu li a {
 
 /* FOOTER */
 footer {
-        border-top: 1px solid #FCC900;
-        margin-top: 20px;
+    border-top: 1px solid #FCC900;
 }
 
 .front footer {
@@ -260,17 +259,18 @@ footer {
   padding: 12% 0 10% 0;
   color: #ffffff;
   border-top-width: 8px;
-  border-top: 1px solid #ccf700;
+  border-top: 1px solid #ffc700;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
+  pointer-events: none;
 }
 
 /* QUIENES SOMOS */
 
 .pane-page-title {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto 10px;
 }
 
 .pane-page-title h1 {
@@ -280,6 +280,9 @@ footer {
     font-size: 36px;
     margin: 0;
     padding-left: 0;
+    padding-top: 0;
+    margin-top: -10px;
+    padding-bottom: 20px
 }
 
 .widget-text p {
@@ -307,8 +310,9 @@ footer {
 
 .pane-bundle-widget-profile {
     background: #000;
-    padding-bottom: 10px;
+    padding-bottom: 1px;
     margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 .pane-bundle-widget-profile img,
@@ -316,7 +320,31 @@ footer {
     width: 100%;
 }
 
-.pane-bundle-widget-profile h2 {
+.pane-bundle-widget-profile img {
+    height: 200px !important;
+}
+
+.pane-bundle-widget-image img {
+    height: 160px !important;
+}
+
+.pane-bundle-widget-itemslist {
+    margin-top: 30px;
+}
+
+.pane-bundle-widget-itemslist article {
+    margin-bottom: 30px;
+}
+
+.pane-bundle-widget-itemslist article a {
+    background-color: #000;
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.pane-bundle-widget-profile h2,
+.pane-bundle-widget-itemslist h1 {
     font-family: 'Oswald';
     font-weight: 300;
     text-transform: uppercase;
@@ -327,8 +355,15 @@ footer {
     margin-bottom: 0;
 }
 
+.pane-bundle-widget-itemslist h1 {
+    padding-top: 0;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
 .pane-bundle-widget-profile h3,
-.pane-bundle-widget-profile p {
+.pane-bundle-widget-profile p,
+.pane-bundle-widget-itemslist p {
     font-family: 'Oswald';
     font-size: 24px;
     margin: 0 10px 0 10px;
@@ -341,12 +376,37 @@ footer {
     padding-top: 30px;
 }
 
-.pane-bundle-widget-profile p {
+.pane-bundle-widget-profile p,
+.pane-bundle-widget-itemslist p {
     color: #fff;
     margin-top: 10px;
     margin-bottom: 0;
     padding-bottom: 0;
     text-transform: uppercase;
+}
+
+.pane-bundle-widget-itemslist p {
+    margin: 0;
+    padding: 10px 10px 30px 15px;
+    text-decoration: none;
+}
+
+.pane-bundle-widget-itemslist img {
+    height: 200px !important;
+}
+
+.pane-bundle-widget-itemslist span.label {
+    height: 40px;
+    width: 140px;
+    background-color: #799f28;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Oxygen';
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
 }
 
 .pane-bundle-widget-profile p:last-child {
@@ -359,7 +419,11 @@ footer {
 
 .pane-bundle-widget-image a {
     display: block;
-    margin-bottom: 53px;
+    margin-bottom: 20px;
+}
+
+.pane-bundle-widget-image a:last-child {
+    margin-bottom: 0;
 }
 
 .pane-bundle-widget-image a:last-child {
@@ -369,16 +433,67 @@ footer {
 
 /* SLIDER */
 
-.description {
-  color: #ffc700;
-  font-family: 'Oxygen';
-  font-size: 20px;
-  font-weight: 300;
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+.pane-bundle-widget-slider {
+    margin-top: -50px;
 }
 
+.flexslider {
+    overflow: hidden;
+    position: relative;
+}
 
+.slider-container {
+  overflow: hidden;
+  position: relative;
+}
 
+.slider-text {
+  bottom: 50px;
+  left: 80px;
+  position: absolute;
+}
+  
+    .slider-text h2 {
+        margin: 0 !important;
+        padding: 0;
+    }
+
+    .slider-text h2 + p {
+        margin-top: 20px;
+    }
+
+    .slider-text .description {
+      color: #ffc700;
+      font-family: 'Oxygen';
+      font-size: 20px;
+      font-weight: 300;
+      text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+    }
+
+.flex-direction-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.flex-direction-nav a {}
+
+.flex-prev,
+.flex-next {
+    height: 75px;
+    position: absolute;
+    width: 75px;
+}
+
+.flex-prev {
+    background: transparent url(../images/flecha-izq.png) repeat;
+    left: 0;
+}
+
+.flex-next {
+    background: transparent url(../images/flecha-der.png) repeat;
+    right: 0;
+}
 
 
 
