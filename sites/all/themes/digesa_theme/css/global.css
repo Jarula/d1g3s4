@@ -168,6 +168,11 @@ header {
         font-size: 18px;
 }
 
+.menu li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 footer .menu {
   margin: 0;
 }
