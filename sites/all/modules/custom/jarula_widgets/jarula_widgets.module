@@ -217,7 +217,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 			case 'widget_profile':
 
-				$image = theme( 'image_style', array('style_name' => 'small_wide', 'path' => $entity['field_image'][0]['#item']['uri'], 'alt' => $entity['field_image'][0]['#item']['alt'], 'title' => $entity['field_image'][0]['#item']['title']));
+				$image = theme( 'image_style', array('style_name' => 'small_less_wide', 'path' => $entity['field_image'][0]['#item']['uri'], 'alt' => $entity['field_image'][0]['#item']['alt'], 'title' => $entity['field_image'][0]['#item']['title']));
 
 				$name = '<h2>'.$entity['title_field'][0]['#markup'].'</h2>';
 
@@ -444,7 +444,9 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                         $nid = true;
                                 }
 
-                                if($currentNode && $nid){
+				$multipleNode = $entity['field_multinode'][0]['#markup'];
+
+                                if($currentNode && $nid && !$multipleNode){
 					$node = node_load(arg(1));
 	                                $address = field_get_items('node', $node, 'field_address');
         	                        $address = isset($address[0]['value']) ? $address[0]['value'] : NULL;
@@ -470,7 +472,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 					$isMap = true;
 
-				} else {
+				} elseif($multipleNode && !$currentNode) {
 
                         	        $view = views_get_view('jarula_widgets');
                                 	$view->set_display('items_list');
@@ -498,9 +500,29 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					}
 
                                         $zoom = '12';
-					$map_size_height = '400px';
+					$map_size_height = '300px';
 
 					$isMap = true;
+
+				} elseif(!$multipleNode && !$currentNode) {
+
+					$field = $entity['field_address'][0]['entity']['field_collection_item'][$entity['field_address']['#items'][0]['value']];
+
+					if(isset($field)){
+	                                        $street = $field['field_street']['#items'][0]['value'];
+                                        	$city = $field['field_city']['#items'][0]['value'];
+						$province = $field['field_province']['#items'][0]['value'];
+
+						$info = '';
+
+	                                        $markersArray[] = array('address' => $street.', '.$city.', '.$province, 'info' => $info);
+
+	                                        $zoom = '16';
+        	                                $map_size_height = '170px';
+
+                	                        $isMap = true;
+					}
+
 				}
 				if(isset($isMap)) {
 //                                      $key = '&key=AIzaSyCvsZaG5p6PLIM4APBrU1IMiYbAe-Ntz_I';
@@ -530,9 +552,11 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                                 'language' => $map_language,
                                         );
 
+					$icon = drupal_get_path('theme', 'digesa_theme').'/images/map-icon.png';
+
                                         drupal_add_js('https://maps.googleapis.com/maps/api/js?v=3.exp&language=' . $map_language . $key . '&sensor=false', 'external');
                                         drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_map/map.js');
-                                        drupal_add_js( array('key' => $array_js), 'setting');
+                                        drupal_add_js( array('key' => $array_js, 'icon' => $icon), 'setting');
                                         $output = "<style type='text/css'>#map-canvas img { max-width: none; }</style>";
                                         $output .= "<div class='grid-100'><div id='map-canvas' style='width:" . $map_size_width . "; height: " . $map_size_height . ";' ></div></div>";
 					$vars['content'] = $output;
