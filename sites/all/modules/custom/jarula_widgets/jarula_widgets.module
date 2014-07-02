@@ -557,8 +557,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                         drupal_add_js('https://maps.googleapis.com/maps/api/js?v=3.exp&language=' . $map_language . $key . '&sensor=false', 'external');
                                         drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_map/map.js');
                                         drupal_add_js( array('key' => $array_js, 'icon' => $icon), 'setting');
-                                        $output = "<style type='text/css'>#map-canvas img { max-width: none; }</style>";
-                                        $output .= "<div class='grid-100'><div id='map-canvas' style='width:" . $map_size_width . "; height: " . $map_size_height . ";' ></div></div>";
+                                        $output .= "<div class=''><div id='map-canvas' style='width:380px; height: " . $map_size_height . ";' ></div></div>";
 					$vars['content'] = $output;
 				} else {
         	                        $vars['content'] = 'No hay mapa disponible.';

@@ -5,6 +5,7 @@ body {
   background-color: #161616;
   color: #bababa;
   background: transparent url(../images/trama.gif) repeat;
+  -webkit-font-smoothing: antialiased;
 }
 
 pre,
@@ -513,4 +514,79 @@ footer {
 }
 
 
+/* CONTACTO */
 
+.section-contacto .pane-node-webform {
+  
+}
+
+.section-contacto .pane-node-webform p {
+
+}
+
+.section-contacto .pane-node-webform label {
+  display: none;
+}
+
+.section-contacto .pane-node-webform input {
+  background-color: #000000;
+  border: none;
+  height: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.section-contacto .pane-node-webform input[placeholder] {
+  -webkit-font-smoothing: antialiased;
+  color: #bababa;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+.section-contacto .pane-node-webform input[placeholder="Mensaje *"] {
+  color: #bababa;
+  height: 85px;
+}
+
+.section-contacto .pane-node-webform input[type="submit"] {
+  -webkit-font-smoothing: antialiased;
+  background-color: #999999;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.section-contacto .webform-component-textfield {
+  margin-top: 20px;
+}
+
+.section-contacto .webform-component + .webform-component {
+  margin-top: -5px;
+}
+
+.section-contacto .widget-text {
+  padding-top: 17px;
+  padding-left: 55px;
+}
+
+.section-contacto .widget-text p + p {
+  margin-top: 9px;
+}
+
+.section-contacto .widget-text .direction {
+  font-size: 14px;
+}
+
+.section-contacto .pane-node-body,
+.section-contacto .pane-node-webform {
+  margin-left: -5px;
+}
+
+.section-contacto .pane-bundle-widget-text,
+.section-contacto .pane-bundle-widget-map {
+  width: 380px;
+}
+
+.section-contacto .pane-bundle-widget-text {
+  background: transparent url(../images/logos-contacto.jpg) no-repeat;
+  height: 120px;
+}
