@@ -178,7 +178,6 @@ function jarula_widgets_entity_info_alter(&$entity_info) {
 function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 	$entity = &$vars['content'];
-	//$vars['title'] = '';
 
 	if ( isset($entity['#bundle']) && $entity['#entity_type'] == 'fieldable_panels_pane') {
 
@@ -230,6 +229,8 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 			break;
 
 			case 'widget_profile':
+
+				$vars['title'] = '';
 
 				$image = theme( 'image_style', array('style_name' => 'small_less_wide', 'path' => $entity['field_image'][0]['#item']['uri'], 'alt' => $entity['field_image'][0]['#item']['alt'], 'title' => $entity['field_image'][0]['#item']['title']));
 
