@@ -159,12 +159,26 @@ function jarula_widgets_entity_info_alter(&$entity_info) {
                 ),
         );
 
+        $entity_info['fieldable_panels_pane']['bundles']['widget_form'] = array(
+                        'label' => 'Widget Form',
+                        'category' => 'Jarula Widgets',
+                        'pane top level' => TRUE, // set to true to make this show as a top level icon
+                        //'pane icon' => '/path/to/custom/icon/for/this/pane.png',
+                        'admin' => array(
+                          'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+                          'bundle argument' => 4,
+                          // Note that this has all _ replaced with - from the bundle name.
+                          'real path' => 'admin/structure/fieldable-panels-panes/manage/widget_form',
+                          'access arguments' => array('Administer content'),
+                ),
+        );
+
 }
 
 function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 	$entity = &$vars['content'];
-	$vars['title'] = '';
+	//$vars['title'] = '';
 
 	if ( isset($entity['#bundle']) && $entity['#entity_type'] == 'fieldable_panels_pane') {
 
@@ -365,7 +379,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 						$image = isset($image[0]) ? $image[0] : NULL;
 
                                                 $image = array(
-                                                      'style_name' => 'big_wide',
+                                                      'style_name' => 'big_wide_900',
                                                       'path' => $image['uri'],
                                                       'alt' => $image['alt'],
                                                       'title' => $image['title'],
@@ -557,12 +571,36 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                         drupal_add_js('https://maps.googleapis.com/maps/api/js?v=3.exp&language=' . $map_language . $key . '&sensor=false', 'external');
                                         drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_map/map.js');
                                         drupal_add_js( array('key' => $array_js, 'icon' => $icon), 'setting');
-                                        $output .= "<div class=''><div id='map-canvas' style='width:380px; height: " . $map_size_height . ";' ></div></div>";
+					$output = "<style type='text/css'>#map-canvas img { max-width: none; }</style>";
+                                        $output .= "<div class='grid-100'><div id='map-canvas' style='width:" . $map_size_width . "; height: " . $map_size_height . ";' ></div></div>";
+//                                        $output .= "<div class=''><div id='map-canvas' style='width:380px; height: " . $map_size_height . ";' ></div></div>";
 					$vars['content'] = $output;
 				} else {
         	                        $vars['content'] = 'No hay mapa disponible.';
 	                        }
 					
+			break;
+
+			case 'widget_form':
+
+				$nid = arg(1);
+
+				if (arg(0) == 'node' && is_numeric($nid)) {
+					$nid = arg(1);
+					$node = node_load($nid);
+					$title = theme('html_tag', array('element' => array('#tag' => 'h2', '#attributes' => array('class' => 'grid-parent'), '#value' => t('Hacenos tu consulta acerca de ') . theme('html_tag', array('element' => array('#tag' => 'strong', '#value' => $node->title))))));
+				}
+
+				$nid = $entity['field_wform_formulario']['#items'][0]['target_id'];
+
+				if (isset($nid) && is_numeric($nid)) {
+					$node = node_load($nid);
+				       	webform_node_view($node,'full');
+					$form = theme_webform_view($node->content);
+
+					$vars['content'] = theme('widget_form', array('title' => $title, 'form' => $form));
+                                }
+			
 			break;
         	}
 	}
@@ -606,6 +644,10 @@ function jarula_widgets_theme() {
                 ),
                 'widget_slider_node' => array(
                         'template' => 'widget-slider-node',
+                        'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
+                ),
+                'widget_form' => array(
+                        'template' => 'widget-form',
                         'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
                 ),
 

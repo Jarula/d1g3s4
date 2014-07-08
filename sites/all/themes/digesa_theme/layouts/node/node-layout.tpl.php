@@ -1,9 +1,9 @@
 <article id="article" class="grid-container">
 	<div class="grid-80 prefix-10 suffix-10 grid-parent">
-		<div class="grid-50 mobile-grid-100  info">
+		<div class="grid-50 mobile-grid-100 grid-parent info">
 			<?php print render($page['info']); ?>
 		</div>
-        	<div class="grid-50 mobile-grid-100 map">
+        	<div class="grid-50 mobile-grid-100 grid-parent map">
 	                <?php print render($page['map']); ?>
         	</div> 
 		<div class="clearfix"></div>
