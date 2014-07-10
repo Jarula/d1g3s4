@@ -614,16 +614,24 @@ footer {
   margin-left: 0 !important;
 }
 
-.section-ventas-y-alquileres .pane-bundle-widget-slider {
+.section-ventas-y-alquileres .pane-bundle-widget-slider,
+.section-obras .pane-bundle-widget-slider,
+.section-proyectos-futuros .pane-bundle-widget-slider {
   margin-top: 30px;
 }
 
-.section-ventas-y-alquileres label {
+.section-ventas-y-alquileres label,
+.section-obras label,
+.section-proyectos-futuros label {
   display: none;
 }
 
 .section-ventas-y-alquileres .pane-bundle-widget-form input[placeholder],
-.section-ventas-y-alquileres .pane-bundle-widget-form textarea {
+.section-obras .pane-bundle-widget-form input[placeholder],
+.section-proyectos-futuros .pane-bundle-widget-form input[placeholder],
+.section-ventas-y-alquileres .pane-bundle-widget-form textarea,
+.section-obras .pane-bundle-widget-form textarea,
+.section-proyectos-futuros .pane-bundle-widget-form textarea {
   background-color: #000;
   border: none;
   color: #bababa;
@@ -633,18 +641,34 @@ footer {
   padding: 5px;
 }
 
-.section-ventas-y-alquileres .pane-bundle-widget-form .form-item {
+.section-ventas-y-alquileres .pane-bundle-widget-form .form-item,
+.section-obras .pane-bundle-widget-form .form-item,
+.section-proyectos-futuros .pane-bundle-widget-form .form-item {
   margin-bottom: 10px;
 }
 
-.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textarea {
+.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textarea,
+.section-obras .pane-bundle-widget-form .webform-component-textarea,
+.section-proyectos-futuros .pane-bundle-widget-form .webform-component-textarea {
 
 } 
 
-.section-ventas-y-alquileres .pane-bundle-widget-form h2 {
+.section-ventas-y-alquileres .pane-bundle-widget-form h2,
+.section-obras .pane-bundle-widget-form h2,
+.section-proyectos-futuros .pane-bundle-widget-form h2 {
   margin: 30px 0;
   margin-left: 0 !important;
   padding: 0;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-slider .flex-prev,
+.section-obras .pane-bundle-widget-slider .flex-prev,
+.section-proyectos-futuros .pane-bundle-widget-slider .flex-prev,
+.section-ventas-y-alquileres .pane-bundle-widget-slider .flex-next,
+.section-obras .pane-bundle-widget-slider .flex-prev,
+.section-proyectos-futuros .pane-bundle-widget-slider .flex-prev {
+  font-size: 1px;
+  text-indent: 10000px;
 }
 
 
