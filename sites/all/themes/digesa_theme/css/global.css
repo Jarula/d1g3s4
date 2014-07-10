@@ -605,21 +605,21 @@ footer {
 
 .section-contacto .pane-1 {
   background: #000 url(/~digesapr/sites/all/themes/digesa_theme/images/smartphone.jpg) no-repeat;
-  color: #bababa;
   float: right;
-  font-family: 'Oxygen', Arial;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 20px;
-  padding: 42px 10px 0 50px;
+  height: 120px;
+  padding: 42px 0 0;
   width: 210px;
-
 }
 
 .section-contacto .pane-1 a {
   background-color: #000;
+  color: #bababa;
   display: block;
-  height: 120px;
+  font-family: 'Oxygen', Arial;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+  margin: 0 0 35px 50px;
 }
 
 .section-contacto .pane-node-webform .captcha img {
