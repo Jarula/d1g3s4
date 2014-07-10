@@ -536,7 +536,15 @@ footer {
   width: 100%;
 }
 
-.section-contacto .pane-node-webform input[placeholder] {
+.section-contacto .pane-node-webform textarea {
+  background-color: #000000;
+  border: none;
+  position: relative;
+  width: 100%;
+}
+
+.section-contacto .pane-node-webform input[placeholder],
+.section-contacto .pane-node-webform textarea {
   -webkit-font-smoothing: antialiased;
   color: #bababa;
   font-weight: normal;
@@ -581,7 +589,10 @@ footer {
   margin-left: -5px;
 }
 
-.section-contacto .pane-bundle-widget-text,
+.section-contacto .pane-bundle-widget-text {
+  width: 360px;
+}
+
 .section-contacto .pane-bundle-widget-map {
   width: 380px;
 }
@@ -589,13 +600,55 @@ footer {
 .section-contacto .pane-bundle-widget-text {
   background: transparent url(../images/logos-contacto.jpg) no-repeat;
   height: 120px;
+  margin-left: 10px;
+}
+
+.section-contacto .pane-1 {
+  background: #000 url(/~digesapr/sites/all/themes/digesa_theme/images/smartphone.jpg) no-repeat;
+  color: #bababa;
+  float: right;
+  font-family: 'Oxygen', Arial;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+  padding: 42px 10px 0 50px;
+  width: 210px;
+
+}
+
+.section-contacto .pane-1 a {
+  background-color: #000;
+  display: block;
+  height: 120px;
+}
+
+.section-contacto .pane-node-webform .captcha img {
+  display: inline-block;
+  float: left;
+}
+
+.section-contacto .pane-node-webform .form-item-captcha-response {
+  float: left;
+  margin: 0 10px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.section-contacto .pane-node-webform .form-item-captcha-response input {
+  float: left;
+  height: 38px;
+  overflow: hidden;
+}
+
+.section-contacto .pane-node-webform .form-item-captcha-response .description {
+  display: none;
+}
+
+.section-contacto .pane-node-webform .form-actions input {
+  height: 38px;
 }
 
 /* INTERNA */
-
-    /*
-        .section-ventas-y-alquileres,
-    */
 
 .pane-bundle-widget-info {
   background-color: #000000;
