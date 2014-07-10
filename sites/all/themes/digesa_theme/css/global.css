@@ -440,7 +440,7 @@ footer {
 /* SLIDER */
 
 .pane-bundle-widget-slider {
-    margin-top: -50px;
+    margin-top: -40px;
 }
 
 .flexslider {
@@ -590,3 +590,80 @@ footer {
   background: transparent url(../images/logos-contacto.jpg) no-repeat;
   height: 120px;
 }
+
+/* INTERNA */
+
+    /*
+        .section-ventas-y-alquileres,
+    */
+
+.pane-bundle-widget-info {
+  background-color: #000000;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+}
+
+.pane-bundle-widget-info h2 {
+  color: #ffc700;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+
+.pane-bundle-widget-info h3 {
+  margin-left: 0 !important;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-slider {
+  margin-top: 30px;
+}
+
+.section-ventas-y-alquileres label {
+  display: none;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form input[placeholder],
+.section-ventas-y-alquileres .pane-bundle-widget-form textarea {
+  background-color: #000;
+  border: none;
+  color: #bababa;
+  font-family: 'Oxygen', Arial;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 5px;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .form-item {
+  margin-bottom: 10px;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textarea {
+
+} 
+
+.section-ventas-y-alquileres .pane-bundle-widget-form h2 {
+  margin: 30px 0;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

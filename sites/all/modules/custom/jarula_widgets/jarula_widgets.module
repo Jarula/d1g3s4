@@ -483,7 +483,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					$markersArray[] = array('address' => $street.', '.$city.', '.$province, 'info' => $info);
 
 					$zoom = '16';
-                                        $map_size_height = '200px';
+                                        $map_size_height = '150px';
 
 					$isMap = true;
 
@@ -589,7 +589,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 				if (arg(0) == 'node' && is_numeric($nid)) {
 					$nid = arg(1);
 					$node = node_load($nid);
-					$title = theme('html_tag', array('element' => array('#tag' => 'h2', '#attributes' => array('class' => 'grid-parent'), '#value' => t('Hacenos tu consulta acerca de ') . theme('html_tag', array('element' => array('#tag' => 'strong', '#value' => $node->title))))));
+					$title = theme('html_tag', array('element' => array('#tag' => 'h2', '#attributes' => array('class' => ''), '#value' => t('Hacenos tu consulta acerca de ') . theme('html_tag', array('element' => array('#tag' => 'strong', '#value' => $node->title))))));
 				}
 
 				$nid = $entity['field_wform_formulario']['#items'][0]['target_id'];
