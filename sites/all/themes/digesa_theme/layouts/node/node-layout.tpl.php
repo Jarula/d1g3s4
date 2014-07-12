@@ -11,7 +11,7 @@
 	                <?php print render($page['slider']); ?>
         	</div>
 	        <div class="clearfix"></div>
-        	<div class="grid-20 suffix-80 grid-mobile-100 planes">
+        	<div class="grid-100 grid-mobile-100 grid-parent planes">
 	                <?php print render($page['planes']); ?>
         	</div>
 	        <div class="clearfix"></div>
