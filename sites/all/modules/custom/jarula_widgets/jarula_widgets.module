@@ -323,7 +323,26 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                         }
 					$image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $uri, 'alt' => $title));
 
-					$status = isset($result->field_field_status[0]['rendered']['#markup']) ? theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => 'label'),'#value' => $result->field_field_status[0]['rendered']['#markup']))) : NULL;
+					if (isset($result->field_field_status[0]['rendered']['#markup'])) {
+                        $status_type = $result->field_field_status[0]['rendered']['#markup'];
+                        switch ($status_type) {
+                            case '100% vendido':
+                                $status_type = "label light_green";
+                                break;
+                            case 'Últimas unidades':
+                                $status_type = "label yellow";
+                                break;
+                            case 'Nuevo':
+                                $status_type = "label dark_green";
+                                break;
+                            case 'Más solicitado':
+                                $status_type = "label blue";
+                                break;
+                        }
+
+
+                        $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $result->field_field_status[0]['rendered']['#markup'])));
+                    }
 
 					$destination = url('node/'.$result->nid);
 

@@ -404,7 +404,6 @@ footer {
 .pane-bundle-widget-itemslist span.label {
     height: 40px;
     width: 140px;
-    background-color: #799f28;
     position: absolute;
     top: 0;
     right: 0;
@@ -613,10 +612,10 @@ footer {
   color: #bababa;
   display: block;
   font-family: 'Oxygen', Arial;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 20px;
-  margin: 0 0 35px 50px;
+  margin: 0 10px 35px 50px;
   text-align: left;
 }
 
@@ -728,8 +727,25 @@ footer {
   text-indent: 10000px;
 }
 
+.section-contacto main {
+  margin-bottom: 10px;
+}
 
+.light_green {
+  background-color: #799f28;
+}
 
+.yellow {
+  background-color: #ffc700;
+}
+
+.dark_green {
+  background-color: #007036;
+}
+
+.blue {
+  background-color: #002570;
+}
 
 
 
