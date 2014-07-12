@@ -173,6 +173,20 @@ function jarula_widgets_entity_info_alter(&$entity_info) {
                 ),
         );
 
+        $entity_info['fieldable_panels_pane']['bundles']['widget_sketch'] = array(
+                        'label' => 'Widget Sketch',
+                        'category' => 'Jarula Widgets',
+                        'pane top level' => TRUE, // set to true to make this show as a top level icon
+                        //'pane icon' => '/path/to/custom/icon/for/this/pane.png',
+                        'admin' => array(
+                          'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+                          'bundle argument' => 4,
+                          // Note that this has all _ replaced with - from the bundle name.
+                          'real path' => 'admin/structure/fieldable-panels-panes/manage/widget_sketch',
+                          'access arguments' => array('Administer content'),
+                ),
+        );
+
 }
 
 function jarula_widgets_preprocess_panels_pane(&$vars) {
@@ -622,6 +636,38 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                 }
 			
 			break;
+
+			case 'widget_sketch':
+			
+				$images = 'asdasdasdasdasd';
+
+                                if (arg(0) == 'node' && is_numeric(arg(1))) {
+                                        $nid = arg(1);
+					$node = node_load($nid);
+					
+					$images = array();
+
+					$fieldCollection = field_get_items('node', $node, 'field_sketch');
+					foreach($fieldCollection as $eid) {
+						$eid = $eid['value'];
+						$sketch = entity_load('field_collection_item', array($eid));
+						$title = $sketch[$eid]->field_jw_ws_name['und'][0]['safe_value'];
+						$image = $sketch[$eid]->field_jw_ws_image['und'][0];
+						$imageURI = file_create_url($image['uri']);
+						$image = theme('image', array(
+							 	'path' => $image['uri'],
+								'alt' => $image['alt'],
+								'title' => $image['title']));
+						$image = l($image, $imageURI, array('attributes' => array('class' => 'colorbox-load', 'rel' => 'gallery'), 'html' => TRUE));
+						
+						$images[] = $image;
+					}
+
+					$vars['content'] = theme('widget_sketch', array('images' => $images));
+
+                                }
+
+			break;
         	}
 	}
 }
@@ -668,6 +714,10 @@ function jarula_widgets_theme() {
                 ),
                 'widget_form' => array(
                         'template' => 'widget-form',
+                        'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
+                ),
+                'widget_sketch' => array(
+                        'template' => 'widget-sketch',
                         'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
                 ),
 
