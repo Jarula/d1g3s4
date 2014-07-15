@@ -187,6 +187,21 @@ function jarula_widgets_entity_info_alter(&$entity_info) {
                 ),
         );
 
+        $entity_info['fieldable_panels_pane']['bundles']['widget_search'] = array(
+                        'label' => 'Widget Search',
+                        'category' => 'Jarula Widgets',
+                        'pane top level' => TRUE, // set to true to make this show as a top level icon
+                        //'pane icon' => '/path/to/custom/icon/for/this/pane.png',
+                        'admin' => array(
+                          'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+                          'bundle argument' => 4,
+                          // Note that this has all _ replaced with - from the bundle name.
+                          'real path' => 'admin/structure/fieldable-panels-panes/manage/widget_search',
+                          'access arguments' => array('Administer content'),
+                ),
+        );
+
+
 }
 
 function jarula_widgets_preprocess_panels_pane(&$vars) {
@@ -642,32 +657,87 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                 if (arg(0) == 'node' && is_numeric(arg(1))) {
                                         $nid = arg(1);
 					$node = node_load($nid);
-					
-					$images = array();
 
-					$fieldCollection = field_get_items('node', $node, 'field_sketch');
-					foreach($fieldCollection as $eid) {
-						$eid = $eid['value'];
-						$sketch = entity_load('field_collection_item', array($eid));
-						$title = $sketch[$eid]->field_jw_ws_name['und'][0]['safe_value'];
-						$image = $sketch[$eid]->field_jw_ws_image['und'][0];
-						$imageURI = file_create_url($image['uri']);
-						$image = theme('image_style', array(
-								'style_name' => 'tiny_square',
-							 	'path' => $image['uri'],
-								'alt' => $image['alt'],
-								'title' => $image['title']));
-						$image = l($image, $imageURI, array('attributes' => array('class' => 'colorbox-load', 'rel' => 'gallery'), 'html' => TRUE));
+					if(isset($node->field_sketch['und'])){
+					
+						$images = array();
+						$fieldCollection = field_get_items('node', $node, 'field_sketch');
+						foreach($fieldCollection as $eid) {
+							$eid = $eid['value'];
+							$sketch = entity_load('field_collection_item', array($eid));
+							$title = $sketch[$eid]->field_jw_ws_name['und'][0]['safe_value'];
+							$image = $sketch[$eid]->field_jw_ws_image['und'][0];
+							$imageURI = file_create_url($image['uri']);
+							$image = theme('image_style', array(
+									'style_name' => 'tiny_square',
+								 	'path' => $image['uri'],
+									'alt' => $image['alt'],
+									'title' => $image['title']));
+							$image = l($image, $imageURI, array('attributes' => array('class' => 'colorbox-load', 'rel' => 'gallery'), 'html' => TRUE));
 						
-						$images[] = $image;
+							$images[] = $image;
+						}
+
+
+						drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_sketch/content.js');
+
+						$vars['content'] = theme('widget_sketch', array('images' => $images));
 					}
 
-
-					drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_sketch/content.js');
-
-					$vars['content'] = theme('widget_sketch', array('images' => $images));
-
                                 }
+
+			break;
+
+			case 'widget_search':
+
+				$view = views_get_view('search_db');
+                                $view->set_display('search_db');
+                                $view->execute();
+
+				foreach($view->result as $result){
+					$nids[] = $result->entity;
+				}
+
+				$nodes = node_load_multiple($nids);
+
+				foreach($nodes as $node){
+					$streetID = $node->field_address['und'][0]['value'];
+					$street = entity_load('field_collection_item', array($streetID));
+					$street = $street[$streetID]->field_street['und'][0]['safe_value'];
+
+					$status = $node->field_status['und'][0]['value'];
+					switch ($status) {
+						case '100% vendido':
+							$status_type = "label light_green";
+						break;
+						case 'Últimas unidades':
+							$status_type = "label yellow";
+						break;
+						case 'Nuevo':
+							$status_type = "label dark_green";
+						break;
+						case 'Más solicitado':
+							$status_type = "label blue";
+						break;
+					}
+
+					$status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $status)));
+
+					$imageID = $node->field_slide['und'][0]['value']; 
+					$image = entity_load('field_collection_item', array($imageID));
+					$image = $image[$imageID]->field_image['und'][0];
+					$image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $image['uri'], 'alt' => $node->title));
+
+					$widget_search[] = array(
+								'title' =>$node->title,
+								'street' => $street,
+								'image' => $image,
+								'status' => $status,
+								'destination' => url('node/'.$node->nid),
+								);
+				}
+
+				$vars['content'] = theme('widget_search', array('widget_search' => $widget_search));
 
 			break;
         	}
@@ -720,6 +790,10 @@ function jarula_widgets_theme() {
                 ),
                 'widget_sketch' => array(
                         'template' => 'widget-sketch',
+                        'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
+                ),
+                'widget_search' => array(
+                        'template' => 'widget-search',
                         'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
                 ),
 
