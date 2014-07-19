@@ -667,7 +667,65 @@ footer {
 }
 
 .pane-bundle-widget-info h3 {
+  color: #fff;
+  font-family: 'Oswald';
+  font-size: 30px;
+  font-weight: 300;
   margin-left: 0 !important;
+}
+
+.pane-bundle-widget-info p {
+    color: #bababa;
+    font-size: 14px;
+    font-family: 'Oxygen';
+    padding: 0 10px;
+}
+
+.section-ventas-y-alquileres .pane-node-field-features,
+.section-ventas-y-alquileres .pane-node-field-more
+/*.section-obras .field__items,
+.section-proyectos-futuros .field__items*/ {
+    background-color: #000;
+    padding: 20px;
+}
+
+.section-ventas-y-alquileres .pane-node-field-more .field__items {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
+
+.section-ventas-y-alquileres .pane-node-field-features h2,
+.section-ventas-y-alquileres .pane-node-field-more h2 {
+    margin: 0 0 20px 0 !important;
+    padding: 0;
+}
+
+.section-ventas-y-alquileres .field__items .field__item:before,
+.section-obras .field__items .field__item:before,
+.section-proyectos-futuros .field__items .field__item:before {
+    content: "-";
+    margin-right: 5px;
+}
+
+.section-ventas-y-alquileres .field__items .field__item,
+.section-obras .field__items .field__item,
+.section-proyectos-futuros .field__items .field__item {
+    color: #bababa;
+    font-family: 'Oxygen';
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.section-ventas-y-alquileres .field__items .field__item:last-child,
+.section-obras .field__items .field__item:last-child,
+.section-proyectos-futuros .field__items .field__item:last-child {
+    margin-bottom: 0;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form h2 strong {
+    color: #ffc700;
+    font-weight: normal;
 }
 
 .section-ventas-y-alquileres .pane-bundle-widget-slider,
