@@ -807,6 +807,9 @@ footer {
 .section-ventas-y-alquileres .pane-bundle-widget-form .form-actions input.form-submit {
     background-color: #999;
     border: none;
+    color: #000;
+    font-family: 'Oswald';
+    font-size: 18px;
     padding: 10px;
     text-transform: uppercase;
 }
@@ -858,7 +861,19 @@ footer {
 }
 
 
-
+.section-ventas-y-alquileres .pane-bundle-widget-sketch,
+.section-obras .pane-bundle-widget-sketch,
+.section-proyectos-futuros .pane-bundle-widget-sketch {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Oswald';
+    font-size: 25px;
+    font-weight: 300;
+    margin: 10px;
+    padding: 20px 10px 20px 25px;
+}
 
 
 
