@@ -428,7 +428,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 						$image = isset($image[0]) ? $image[0] : NULL;
 
                                                 $image = array(
-                                                      'style_name' => 'big_wide_900',
+                                                      'style_name' => 'big_wide_600',
                                                       'path' => $image['uri'],
                                                       'alt' => $image['alt'],
                                                       'title' => $image['title'],
