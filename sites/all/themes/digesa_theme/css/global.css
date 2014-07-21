@@ -761,6 +761,58 @@ footer {
   margin-bottom: 10px;
 }
 
+.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textfield,
+.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-email {
+    display: table;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textarea {
+    float: right;
+    height: 113px;
+    margin-top: -118px;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textarea textarea {
+    height: 107px;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .captcha {
+    
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .captcha img {
+    float: left;
+    margin-right: 10px;   
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .captcha .description {
+    display: none;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .captcha .form-item-captcha-response {
+    float: left;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .captcha .form-item-captcha-response input {
+    background-color: #000;
+    border: none;
+    color: #bababa;
+    font-family: 'Oxygen';
+    font-size: 15px;
+    font-weight: 300;
+    height: 36px;
+    margin-right: 10px;
+}
+
+.section-ventas-y-alquileres .pane-bundle-widget-form .form-actions input.form-submit {
+    background-color: #999;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+
+
 .section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textarea,
 .section-obras .pane-bundle-widget-form .webform-component-textarea,
 .section-proyectos-futuros .pane-bundle-widget-form .webform-component-textarea {
