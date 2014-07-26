@@ -896,9 +896,9 @@ footer {
 }
 */
 
-.section-ventas-y-alquileres .widget-sketch-bundle,
-.section-obras .widget-sketch-bundle,
-.section-proyectos-futuros .widget-sketch-bundle{
+.section-ventas-y-alquileres .widget-sketch-wrapper,
+.section-obras .widget-sketch-wrapper,
+.section-proyectos-futuros .widget-sketch-wrapper{
     background-color: #000;
     color: #fff;
     cursor: pointer;
