@@ -402,16 +402,17 @@ footer {
 }
 
 .pane-bundle-widget-itemslist span.label {
-    height: 40px;
-    width: 140px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-family: 'Oxygen';
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    padding-top: 10px;
+  background-color: #799f28;
+  color: #fff;
+  font-family: 'Oxygen';
+  font-size: 16px;
+  height: 40px;
+  padding-top: 12px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 140px;
 }
 
 .pane-bundle-widget-profile p:last-child {
@@ -658,6 +659,7 @@ footer {
   height: 150px;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .pane-bundle-widget-info h2 {
@@ -680,6 +682,15 @@ footer {
     font-size: 14px;
     font-family: 'Oxygen';
     padding: 0 10px;
+}
+
+.pane-bundle-widget-info span {
+  background-color: #799f28;
+  color: #ffffff;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .section-ventas-y-alquileres .pane-node-field-features,
@@ -867,6 +878,7 @@ footer {
   margin-bottom: 10px;
 }
 
+/*
 .light_green {
   background-color: #799f28;
 }
@@ -882,20 +894,21 @@ footer {
 .blue {
   background-color: #002570;
 }
+*/
 
-
-.section-ventas-y-alquileres .widget-sketch-bundle,
-.section-obras .widget-sketch-bundle,
-.section-proyectos-futuros .widget-sketch-bundle{
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Oswald';
-    font-size: 25px;
-    font-weight: 300;
-    margin: 10px;
-    padding: 20px 10px 20px 25px;
+.section-ventas-y-alquileres .widget-sketch-wrapper,
+.section-obras .widget-sketch-wrapper,
+.section-proyectos-futuros .widget-sketch-wrapper{
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Oswald';
+  font-size: 25px;
+  font-weight: 300;
+  margin: 10px;
+  padding: 20px 10px 20px 25px;
+  text-transform: uppercase;
 }
 
 
