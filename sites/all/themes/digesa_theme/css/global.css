@@ -658,6 +658,7 @@ footer {
   height: 150px;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .pane-bundle-widget-info h2 {
@@ -680,6 +681,15 @@ footer {
     font-size: 14px;
     font-family: 'Oxygen';
     padding: 0 10px;
+}
+
+.pane-bundle-widget-info span {
+  background-color: #799f28;
+  color: #ffffff;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .section-ventas-y-alquileres .pane-node-field-features,
