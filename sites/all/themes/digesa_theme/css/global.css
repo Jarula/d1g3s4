@@ -899,15 +899,16 @@ footer {
 .section-ventas-y-alquileres .widget-sketch-wrapper,
 .section-obras .widget-sketch-wrapper,
 .section-proyectos-futuros .widget-sketch-wrapper{
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Oswald';
-    font-size: 25px;
-    font-weight: 300;
-    margin: 10px;
-    padding: 20px 10px 20px 25px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Oswald';
+  font-size: 25px;
+  font-weight: 300;
+  margin: 10px;
+  padding: 20px 10px 20px 25px;
+  text-transform: uppercase;
 }
 
 
