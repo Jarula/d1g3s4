@@ -1,4 +1,4 @@
-<article id="article" class="grid-container">
+<article id="article" class="grid-container grid-parent">
 	<div class="grid-80 prefix-10 suffix-10 grid-parent">
 		<div class="grid-50 mobile-grid-100 info">
 			<?php print render($page['info']); ?>
