@@ -754,19 +754,21 @@ footer {
   display: none;
 }
 
-.section-ventas-y-alquileres .pane-bundle-widget-form input[placeholder],
-.section-obras .pane-bundle-widget-form input[placeholder],
-.section-proyectos-futuros .pane-bundle-widget-form input[placeholder],
-.section-ventas-y-alquileres .pane-bundle-widget-form textarea,
-.section-obras .pane-bundle-widget-form textarea,
-.section-proyectos-futuros .pane-bundle-widget-form textarea {
+.node-type-card .pane-bundle-widget-form .form-item,
+.node-type-card .pane-bundle-widget-form .captcha img {
+  width: 100%;
+}
+
+.node-type-card .pane-bundle-widget-form input,
+.node-type-card .pane-bundle-widget-form textarea {
   background-color: #000;
   border: none;
   color: #bababa;
   font-family: 'Oxygen', Arial;
   font-size: 15px;
   font-weight: 300;
-  padding: 5px;
+  padding: 3%;
+  width: 100%;
 }
 
 .section-ventas-y-alquileres .pane-bundle-widget-form .form-item,
@@ -775,52 +777,16 @@ footer {
   margin-bottom: 10px;
 }
 
-.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textfield,
-.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-email,
-.section-obras .pane-bundle-widget-form .webform-component-textfield,
-.section-obras .pane-bundle-widget-form .webform-component-email,
-.section-proyectos-futuros .pane-bundle-widget-form .webform-component-textfield,
-.section-proyectos-futuros .pane-bundle-widget-form .webform-component-email {
-    display: table;
-}
-
-.section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textarea,
-.section-obras .pane-bundle-widget-form .webform-component-textarea,
-.section-proyectos-futuros .pane-bundle-widget-form .webform-component-textarea {
-    float: right;
-    height: 113px;
-    margin-top: -118px;
-}
-
 .section-ventas-y-alquileres .pane-bundle-widget-form .webform-component-textarea textarea,
 .section-obras .pane-bundle-widget-form .webform-component-textarea textarea,
 .section-proyectos-futuros .pane-bundle-widget-form .webform-component-textarea textarea {
-    height: 107px;
-}
-
-.section-ventas-y-alquileres .pane-bundle-widget-form .captcha,
-.section-obras .pane-bundle-widget-form .captcha,
-.section-proyectos-futuros .pane-bundle-widget-form .captcha {
-    
-}
-
-.section-ventas-y-alquileres .pane-bundle-widget-form .captcha img,
-.section-obras .pane-bundle-widget-form .captcha img,
-.section-proyectos-futuros .pane-bundle-widget-form .captcha img {
-    float: left;
-    margin-right: 10px;   
+    height: 132px;
 }
 
 .section-ventas-y-alquileres .pane-bundle-widget-form .captcha .description,
 .section-obras .pane-bundle-widget-form .captcha .description,
 .section-proyectos-futuros .pane-bundle-widget-form .captcha .description {
     display: none;
-}
-
-.section-ventas-y-alquileres .pane-bundle-widget-form .captcha .form-item-captcha-response,
-.section-obras .pane-bundle-widget-form .captcha .form-item-captcha-response,
-.section-proyectos-futuros .pane-bundle-widget-form .captcha .form-item-captcha-response {
-    float: left;
 }
 
 .section-ventas-y-alquileres .pane-bundle-widget-form .captcha .form-item-captcha-response input,
@@ -861,7 +827,6 @@ footer {
 .section-proyectos-futuros .pane-bundle-widget-form h2 {
   margin: 30px 0;
   margin-left: 0 !important;
-  padding: 0;
 }
 
 .section-ventas-y-alquileres .pane-bundle-widget-slider .flex-prev,

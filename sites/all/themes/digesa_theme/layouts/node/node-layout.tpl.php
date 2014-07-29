@@ -22,7 +22,7 @@
         	        <?php print render($page['more']); ?>
 	        </div>
         	<div class="clearfix"></div>
-	        <div class="grid-100 contact">
+	        <div class="grid-100 contact grid-parent">
         	        <?php print render($page['contact']); ?>
 	        </div>
 	</div>
