@@ -353,6 +353,10 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					$tid = arg(2);
 					$view->set_arguments(array('all', $tid));
 				}
+                                if($entity['field_widgettype']['#items'][0]['value'] != '0') {
+					$view->pre_execute();
+					$view->sort = array_reverse($view->sort, true);
+				}
 				$view->execute();
 
 				foreach($view->result as $key => $result) {
