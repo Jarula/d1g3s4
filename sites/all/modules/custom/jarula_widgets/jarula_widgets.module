@@ -32,6 +32,24 @@ function jarula_widgets_form_alter(&$form, &$form_state, $form_id) {
                 if($required == '1'){ $required = ' *'; } else { $required = ''; };
                 $form['submitted']['mensaje']['#attributes']['placeholder'] = $form['submitted']['mensaje']['#title'].$required;
 
+		$nid = arg(1);
+		$node = node_load($nid);
+		$node = $node->type;
+		if (isset($node) && $node == 'card') {
+			$form['submitted']['nombre_y_apellido']['#prefix'] = '<div class="grid-35 mobile-grid-100">';
+                        $form['submitted']['telefono']['#suffix'] = '</div>';
+			$form['submitted']['mensaje']['#prefix'] = '<div class="grid-50 mobile-grid-100">';
+                        $form['submitted']['mensaje']['#suffix'] = '</div>';
+			if (isset($form['captcha'])) {
+				$form['captcha']['#attributes']['placeholder'] = 'Introduzca el codigo:';
+				$form['captcha']['#prefix'] = '<div class="grid-15 mobile-grid-100">';
+			}
+			else {
+				$form['actions']['#prefix'] = '<div class="grid-15 mobile-grid-100">';
+			}
+			$form['actions']['#suffix'] = '</div>';
+		}
+
         }
 
 }
@@ -637,7 +655,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 				if (arg(0) == 'node' && is_numeric($nid)) {
 					$nid = arg(1);
 					$node = node_load($nid);
-					$title = theme('html_tag', array('element' => array('#tag' => 'h2', '#attributes' => array('class' => ''), '#value' => t('Hacenos tu consulta acerca de ') . theme('html_tag', array('element' => array('#tag' => 'strong', '#value' => $node->title))))));
+					$title = theme('html_tag', array('element' => array('#tag' => 'h2', '#attributes' => array('class' => 'grid-100'), '#value' => t('Hacenos tu consulta acerca de ') . theme('html_tag', array('element' => array('#tag' => 'strong', '#value' => $node->title))))));
 				}
 
 				$nid = $entity['field_wform_formulario']['#items'][0]['target_id'];
