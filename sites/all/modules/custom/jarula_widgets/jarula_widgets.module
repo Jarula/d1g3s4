@@ -449,6 +449,8 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 						$image = field_get_items('field_collection_item', $item, 'field_image');
 						$image = isset($image[0]) ? $image[0] : NULL;
 
+						$thumbnail = image_style_url('thumnail_slider',$image['uri']);
+
                                                 $image = array(
                                                       'style_name' => 'big_wide_600',
                                                       'path' => $image['uri'],
@@ -475,6 +477,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                                         'image' => $image,
                                                         'title' => $title,
                                                         'description' => $description,
+							'thumbnail' => $thumbnail,
                                                         'link' => ($link) ? url($link, array('absolute' => true)) : NULL,
                                                 );
 

@@ -501,18 +501,62 @@ footer {
     right: 0;
 }
 
-
-
-
-
-
-
-
-
 .panel-pane.pane-page-breadcrumb {
   display: none;
 }
 
+/* Slider Interna  */
+.pane-bundle-widget-slider.fullscreen {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1000;
+  margin: 0 !important;
+}
+
+.pane-bundle-widget-slider.fullscreen ul.slides li img {
+  width: 100% !important;
+}
+
+.flex-control-thumbs {
+  display: none;
+}
+
+.flex-bar {
+  position: absolute;
+  bottom: 0;
+  height: 22px;
+  left: 0;
+  right: 0;
+  background: #000000;
+  z-index: 10;
+}
+
+.flex-pauseplay,
+.flex-thumbnails,
+.flex-fullscreen {
+  position: absolute;
+  bottom: 0;
+  background: #000;
+  width: 3%;
+  height: 22px;
+  overflow: hidden;
+  z-index: 15;
+  border-right: solid 1px #666;
+  cursor: pointer;
+}
+
+.flex-fullscreen {
+  right: 0;
+  border-right: none;
+  border-left: solid 1px #666;
+}
+
+.flex-pauseplay {
+  left: 3%;
+}
 
 /* CONTACTO */
 
