@@ -800,6 +800,7 @@ footer {
     font-weight: 300;
     height: 36px;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 .section-ventas-y-alquileres .pane-bundle-widget-form .form-actions input.form-submit,
@@ -810,7 +811,7 @@ footer {
     color: #000;
     font-family: 'Oswald';
     font-size: 18px;
-    padding: 10px;
+    padding: 8px;
     text-transform: uppercase;
 }
 
@@ -861,31 +862,30 @@ footer {
 }
 */
 
-.section-ventas-y-alquileres .widget-sketch-wrapper,
-.section-obras .widget-sketch-wrapper,
-.section-proyectos-futuros .widget-sketch-wrapper{
-  background-color: #000;
+.widget-sketch-wrapper {
+  background-color: #000000;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: 'Oswald';
   font-size: 25px;
   font-weight: 300;
-  margin: 10px;
-  padding: 20px 10px 20px 25px;
+  margin: 10px 10px 8px;
+  padding: 20px 5px 20px 25px;
   text-transform: uppercase;
 }
 
+.widget-sketch-wrapper .container {
+  display: inline-flex;
+}
 
+.widget-sketch-wrapper .container a {
+  margin-right: 10px;
+}
 
-
-
-
-
-
-
-
-
+.widget-sketch-wrapper .container a:last-child {
+  margin-right: 0;
+}
 
 
 
