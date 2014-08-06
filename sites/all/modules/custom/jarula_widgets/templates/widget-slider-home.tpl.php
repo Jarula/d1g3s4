@@ -22,7 +22,9 @@
       controlNav: false,
       prevText: '',
       nextText: '',
-      start: function(slider){}
+      start: function(slider){
+        jQuery( "body" ).removeClass('loading');
+      }
     });
   });
 </script>

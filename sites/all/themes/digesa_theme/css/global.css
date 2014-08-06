@@ -573,6 +573,16 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   margin: 0;
 }
 
+.flex-control-thumbs .thumbs-close {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 0.6%;
+  cursor: pointer;
+}
+
 .flex-control-thumbs li {
   display: inline-block;
   display: -moz-inline-stack;
