@@ -481,7 +481,10 @@ footer {
     width: 100%;
 }
 
-.flex-direction-nav a {}
+.pane-bundle-widget-slider .flex-direction-nav a {
+  font-size: 1px;
+  text-indent: 9999px;
+}
 
 .flex-prev,
 .flex-next {
@@ -1020,6 +1023,15 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 
 
 
+
+
+
+
+
+.pane-bundle-widget-slider .flex-bar,
+.pane-bundle-widget-slider .flex-pauseplay {
+  display: none;
+}
 
 
 
