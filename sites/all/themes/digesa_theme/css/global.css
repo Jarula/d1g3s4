@@ -97,19 +97,30 @@ ul.breadcrumb li a:hover {
 }
 
 /* HOME */
+
 header {
-  z-index: 100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+    background: #000;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    z-index: 100;
+}
+
+.front header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 footer {
   z-index: 100;
-  bottom: 0;
-  left: 0;
-  right: 0;
+}
+
+.front footer {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
 }
 
 .fluid_container {
@@ -131,6 +142,7 @@ footer {
   right: 0;
   top: 0;
 }
+
 .camera_bar {
   z-index: 2;
 }
@@ -149,18 +161,6 @@ footer {
 
 .camera_overlayer {
   opacity: .1;
-}
-
-
-/* HEADER */
-header {
-    padding: 15px 0;
-    background: #000;
-    margin-bottom: 20px;
-}
-
-.front header {
-	margin-bottom: 0;
 }
 
 .search-bar {
