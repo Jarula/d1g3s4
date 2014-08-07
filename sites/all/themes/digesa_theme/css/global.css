@@ -813,6 +813,9 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 }
 
 .section-contacto .pane-node-webform .form-actions input {
+  color: #000;
+  font-family: 'Oswald';
+  font-size: 18px;
   height: 38px;
   width: 24%;
 }
@@ -1041,7 +1044,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 }
 
 .widget-sketch-wrapper .container {
-  display: inline-flex;
+  display: block !important;
 }
 
 .widget-sketch-wrapper .container a {
@@ -1077,10 +1080,30 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 
 
 
-.pane-bundle-widget-slider .flex-bar,
-.pane-bundle-widget-slider .flex-pauseplay {
-  display: none;
+
+
+
+
+/* MAPA */
+
+.pane-bundle-widget-map h1.name {
+  font-family: 'Oswald';
+  font-size: 18px;
+  margin-top: 0;
 }
+
+.pane-bundle-widget-map h1.street {
+  color: #000;
+  text-shadow: none;
+}
+
+
+
+
+
+
+
+
 
 
 
