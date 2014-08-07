@@ -719,6 +719,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 .pane-bundle-widget-slider .flex-fullscreen,
 .pane-bundle-widget-slider .flex-pauseplay {
     border: none;
+    color: #000;
     font-size: 1px;
 }
 
