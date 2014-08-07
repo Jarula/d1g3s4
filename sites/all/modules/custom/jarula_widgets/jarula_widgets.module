@@ -459,9 +459,9 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                                 );
                                                 $image = theme('image_style', $image);
 
-
 						$type = field_get_items('field_collection_item', $item, 'field_slidetype');
 						$type = isset($type[0]['value']) ? $type[0]['value'] : NULL;
+                                                $type = 'type-'.strtolower($type);
 
 						$title = field_get_items('field_collection_item', $item, 'title_field');
 						$title = isset($title[0]['safe_value']) ? $title[0]['safe_value'] : NULL;
@@ -472,6 +472,15 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 						$link = field_get_items('field_collection_item', $item, 'field_href');
 						$link = isset($link[0]['url']) ? $link[0]['url'] : NULL;
 
+                                                $vid = field_get_items('field_collection_item', $item, 'field_video');
+                                                $vid = isset($vid[0]['safe_value']) ? $vid[0]['safe_value'] : NULL;
+                                                $vid = explode('v=', $vid);
+						$vid = $vid[1];
+						
+						$video = "<iframe width='1280' height='720' src='//www.youtube.com/embed/{$vid}?rel=0' frameborder='0' allowfullscreen></iframe>";
+						$preview = "http://img.youtube.com/vi/{$vid}/0.jpg";
+						
+
                                                 $slideItems[] = array(
 	                                                'type' => $type,
                                                         'image' => $image,
@@ -479,10 +488,12 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                                         'description' => $description,
 							'thumbnail' => $thumbnail,
                                                         'link' => ($link) ? url($link, array('absolute' => true)) : NULL,
+							'video' => $video,
+							'preview' => $preview
                                                 );
 
 					}
-
+//dsm($slideItems);
 					$widget_slider = 'widget_slider_node';
 
 				} else {

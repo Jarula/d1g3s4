@@ -4,8 +4,12 @@
     <div class="flex-fullscreen">Fullscreen</div>
   </div>
   <ul class="slides">
-    <?php foreach($widget_slider as $item) { ?>
-     <li data-thumb="<?php print $item['thumbnail']; ?>"><?php print $item['image'] ?></li>
+    <?php foreach($widget_slider as $item) {
+      if ($item['type'] != 'type-video') { ?>
+       <li class="<?php print $item['type']; ?>" data-thumb="<?php print $item['thumbnail']; ?>"><?php print $item['image'] ?></li>
+      <?php } else { ?>
+       <li class="<?php print $item['type']; ?>" data-thumb="<?php print $item['preview']; ?>"><div class="video-wrapper"><?php print $item['video'] ?></div></li>
+      <?php } ?>
     <?php } ?>
   </ul>
 </div>

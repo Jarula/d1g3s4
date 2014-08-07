@@ -594,6 +594,10 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   cursor: pointer;
 }
 
+.flex-control-thumbs li img {
+  max-width: 150px !important;
+}
+
 .flex-bar {
   position: absolute;
   bottom: 0;
@@ -635,6 +639,21 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 
 .flex-pauseplay {
   left: 3%;
+}
+
+.pane-bundle-widget-slider .slides li.type-video .video-wrapper{
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.pane-bundle-widget-slider .slides li.type-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* CONTACTO */
