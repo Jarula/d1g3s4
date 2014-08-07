@@ -660,7 +660,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 .flex-bar {
   position: absolute;
   bottom: 0;
-  height: 22px;
+  height: 30px;
   left: 0;
   right: 0;
   background: #000000;
@@ -726,7 +726,6 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 .pane-bundle-widget-slider .flex-thumbnails:before,
 .pane-bundle-widget-slider .flex-fullscreen:before,
 .pane-bundle-widget-slider .flex-pauseplay:before {
-    bottom: 0;
     color: #fff;
     font-family: "fontello";
     font-size: 18px;
@@ -928,6 +927,11 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.features,
+.more {
+    margin-top: 30px;
 }
 
 .section-ventas-y-alquileres .pane-node-field-features,
