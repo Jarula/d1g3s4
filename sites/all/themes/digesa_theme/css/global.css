@@ -721,37 +721,28 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
     font-size: 1px;
 }
 
-.pane-bundle-widget-slider .flex-thumbnails:before {
-    bottom: 0;
-    color: #fff;
-    content: '\e800';
-    font-family: "fontello";
-    font-size: 18px;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-}
-
-.pane-bundle-widget-slider .flex-fullscreen:before {
-    bottom: 0;
-    color: #fff;
-    content: '\e800';
-    font-family: "fontello";
-    font-size: 18px;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-}
-
+.pane-bundle-widget-slider .flex-thumbnails:before,
+.pane-bundle-widget-slider .flex-fullscreen:before,
 .pane-bundle-widget-slider .flex-pauseplay:before {
     bottom: 0;
     color: #fff;
-    content: '\e800';
     font-family: "fontello";
     font-size: 18px;
     position: absolute;
     text-align: center;
     width: 100%;
+}
+
+.pane-bundle-widget-slider .flex-thumbnails:before {
+    content: '\e800';
+}
+
+.pane-bundle-widget-slider .flex-fullscreen:before {
+    content: '\e802';
+}
+
+.pane-bundle-widget-slider .flex-pauseplay:before {
+    content: '\e801';
 }
 
 /* CONTACTO */
