@@ -718,6 +718,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 .pane-bundle-widget-slider .flex-thumbnails,
 .pane-bundle-widget-slider .flex-fullscreen,
 .pane-bundle-widget-slider .flex-pauseplay {
+    border: none;
     font-size: 1px;
 }
 
@@ -743,6 +744,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 
 .pane-bundle-widget-slider .flex-pauseplay:before {
     content: '\e801';
+    font-size: 17px;
 }
 
 /* CONTACTO */
