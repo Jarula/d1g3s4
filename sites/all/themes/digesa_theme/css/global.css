@@ -929,11 +929,6 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   top: 0;
 }
 
-.features,
-.more {
-    margin-top: 30px;
-}
-
 .section-ventas-y-alquileres .pane-node-field-features,
 .section-ventas-y-alquileres .pane-node-field-more
 /*.section-obras .field__items,
@@ -986,7 +981,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 .section-ventas-y-alquileres .pane-bundle-widget-slider,
 .section-obras .pane-bundle-widget-slider,
 .section-proyectos-futuros .pane-bundle-widget-slider {
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 .section-ventas-y-alquileres label,
@@ -1114,7 +1109,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   font-family: 'Oswald';
   font-size: 25px;
   font-weight: 300;
-  margin: 10px 10px 8px;
+  margin: 0 10px 30px;
   padding: 20px 5px 10px 25px;
   text-transform: uppercase;
 }
