@@ -9,3 +9,4 @@ admin css = ../../../unsemantic_theme/unsemantic-master/assets/stylesheets/unsem
 
 ; ---- Content
 regions[content]       = Content
+regions[widget]       = Widget
