@@ -639,9 +639,11 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   color: #fff;
   cursor: pointer;
   font-family: 'fontello';
+  height: 20px;
+  width: 20px;
 }
 
-.flex-control-thumbs .thumbs-close {
+.flex-control-thumbs .thumbs-close:before {
   content: '\e804';
 }
 
