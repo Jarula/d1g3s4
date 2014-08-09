@@ -990,6 +990,12 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   margin: 30px 0;
 }
 
+.section-ventas-y-alquileres .pane-bundle-widget-slider.fullscreen,
+.section-obras .pane-bundle-widget-slider.fullscreen,
+.section-proyectos-futuros .pane-bundle-widget-slider.fullscreen {
+  margin: 0;
+}
+
 .section-ventas-y-alquileres label,
 .section-obras label,
 .section-proyectos-futuros label {
