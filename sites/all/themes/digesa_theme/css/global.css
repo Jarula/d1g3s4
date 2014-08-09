@@ -688,7 +688,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   bottom: 0;
   background: #000;
   width: 3%;
-  height: 22px;
+  height: 25px;
   overflow: hidden;
   z-index: 15;
   border-right: solid 1px #666;
@@ -737,6 +737,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
     position: absolute;
     text-align: center;
     width: 100%;
+    top: 2px;
 }
 
 .pane-bundle-widget-slider .flex-thumbnails:hover:before,
@@ -755,6 +756,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 
 .pane-bundle-widget-slider .flex-pauseplay:before {
     content: '\e803';
+    font-size: 25px;
 }
 
 .pane-bundle-widget-slider.fullscreen .flex-fullscreen:before {
