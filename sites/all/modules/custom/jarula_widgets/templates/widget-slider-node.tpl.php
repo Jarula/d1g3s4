@@ -52,7 +52,7 @@
           }
         );
 
-        jQuery( ".pane-bundle-widget-slider .flex-control-thumbs" ).append( "<div class='thumbs-close'>X</div>" );
+        jQuery( ".pane-bundle-widget-slider .flex-control-thumbs" ).append( "<div class='thumbs-close'></div>" );
 
         jQuery( ".pane-bundle-widget-slider .flex-control-thumbs div.thumbs-close" ).click(
           function() {

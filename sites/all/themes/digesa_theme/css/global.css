@@ -636,10 +636,13 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   position: absolute;
   right: 3px;
   top: 3px;
-  color: #000000;
-  background-color: #ffffff;
-  padding: 0.6%;
+  color: #fff;
   cursor: pointer;
+  font-family: 'fontello';
+}
+
+.flex-control-thumbs .thumbs-close {
+  content: '\e804';
 }
 
 .flex-control-thumbs li {
@@ -745,16 +748,15 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 }
 
 .pane-bundle-widget-slider .flex-fullscreen:before {
-    content: '\e802';
+    content: '\e801';
 }
 
 .pane-bundle-widget-slider .flex-pauseplay:before {
-    content: '\e801';
-    font-size: 17px;
+    content: '\e803';
 }
 
 .pane-bundle-widget-slider.fullscreen .flex-fullscreen:before {
-    content: '\e804';
+    content: '\e802';
 }
 
 /* CONTACTO */
