@@ -1103,6 +1103,9 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 }
 */
 
+
+/* PLANOS*/
+
 .widget-sketch-wrapper {
   background-color: #000000;
   color: #fff;
@@ -1112,7 +1115,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   font-size: 25px;
   font-weight: 300;
   margin: 10px 10px 8px;
-  padding: 20px 5px 20px 25px;
+  padding: 20px 5px 10px 25px;
   text-transform: uppercase;
 }
 
@@ -1127,6 +1130,11 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 .widget-sketch-wrapper .container a:last-child {
   margin-right: 0;
 }
+
+.pane-bundle-widget-sketch img {
+  margin-bottom: 10px;
+}
+
 
 .pane-bundle-widget-form {
   border-top: 1px solid #FCC900;
@@ -1156,16 +1164,3 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   color: #000;
   text-shadow: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
