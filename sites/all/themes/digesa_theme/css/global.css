@@ -600,7 +600,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   right: 0;
   bottom: 0;
   top: 0;
-  margin: 0 3% !important;
+  margin: 30px 3% !important;
   width: 94%;
 }
 
@@ -751,6 +751,10 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 .pane-bundle-widget-slider .flex-pauseplay:before {
     content: '\e801';
     font-size: 17px;
+}
+
+.pane-bundle-widget-slider.fullscreen .flex-fullscreen:before {
+    content: '\e804';
 }
 
 /* CONTACTO */
