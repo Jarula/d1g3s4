@@ -1117,7 +1117,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 }
 
 .widget-sketch-wrapper .container {
-  display: block !important;
+  display: block;
 }
 
 .widget-sketch-wrapper .container a {
