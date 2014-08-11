@@ -1102,27 +1102,8 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   margin-bottom: 10px;
 }
 
-/*
-.light_green {
-  background-color: #799f28;
-}
-
-.yellow {
-  background-color: #ffc700;
-}
-
-.dark_green {
-  background-color: #007036;
-}
-
-.blue {
-  background-color: #002570;
-}
-*/
-
 
 /* PLANOS*/
-
 .widget-sketch-wrapper {
   background-color: #000000;
   color: #fff;
@@ -1202,4 +1183,26 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   cursor: pointer;
   text-indent: 9999px;
   font-size: 1px;
+}
+
+/* HOME CUSTOM LIST */
+.absolute-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.pane-bundle-widget-custom-card-list .background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #333333;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
 }

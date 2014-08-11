@@ -219,6 +219,19 @@ function jarula_widgets_entity_info_alter(&$entity_info) {
                 ),
         );
 
+        $entity_info['fieldable_panels_pane']['bundles']['widget_custom_card_list'] = array(
+                        'label' => 'Widget Custom Card List',
+                        'category' => 'Jarula Widgets',
+                        'pane top level' => TRUE, // set to true to make this show as a top level icon
+                        //'pane icon' => '/path/to/custom/icon/for/this/pane.png',
+                        'admin' => array(
+                          'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+                          'bundle argument' => 4,
+                          // Note that this has all _ replaced with - from the bundle name.
+                          'real path' => 'admin/structure/fieldable-panels-panes/manage/widget_custom_card_list',
+                          'access arguments' => array('Administer content'),
+                ),
+        );
 
 }
 
@@ -782,6 +795,49 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 				$vars['content'] = theme('widget_search', array('widget_search' => $widget_search));
 
 			break;
+
+			case 'widget_custom_card_list':
+
+				foreach ($entity['field_custom_list_card']['#items'] as $key => $card) {
+
+					$eid = $card['entity']->field_address['und'][0]['value'];
+					$street = entity_load('field_collection_item', array($eid));
+					$street = $street[$eid]->field_street['und'][0]['safe_value'];
+
+					$destination = url('node/'.$card['entity']->nid);
+
+					$eid = $card['entity']->field_slide['und'][0]['value'];
+					$uri = entity_load('field_collection_item', array($eid));
+					$uri = $card->field_image['und'][0]['uri'];
+                                        $image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $uri, 'alt' => $card['entity']->title));
+
+					if (isset($card['entity']->field_status['und'][0])) {
+			                        $status_type = $card['entity']->field_status['und'][0]['value'];
+			                        switch ($status_type) {
+                        			    case '100% vendido':
+			                                $status_type = "label light_green";
+                        			        break;
+			                            case 'Últimas unidades':
+                        			        $status_type = "label yellow";
+			                                break;
+                        			    case 'Nuevo':
+			                                $status_type = "label dark_green";
+                        			        break;
+			                            case 'Más solicitado':
+                	        		        $status_type = "label blue";
+		        	                        break;
+			                        }
+
+			                        $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $card['entity']->field_status['und'][0]['value'])));
+                    			}
+
+					$widget_custom_card_list[] = array('title' => $card['entity']->title, 'street' => $street, 'image' => $image, 'status' => $status, 'destination' => $destination);
+
+				}
+
+				$vars['content'] = theme('widget_custom_card_list', array('widget_custom_card_list' => $widget_custom_card_list));
+
+			break;
         	}
 	}
 }
@@ -836,6 +892,10 @@ function jarula_widgets_theme() {
                 ),
                 'widget_search' => array(
                         'template' => 'widget-search',
+                        'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
+                ),
+                'widget_custom_card_list' => array(
+                        'template' => 'widget-custom-card-list',
                         'path' => drupal_get_path('module', 'jarula_widgets') . '/templates',
                 ),
 
