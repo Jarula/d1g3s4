@@ -1165,6 +1165,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   font-weight: normal;
   margin-bottom: 0;
   margin-left: 0;
+  padding-left: 0;
 }
 
 .pane-bundle-widget-map h2.street {
