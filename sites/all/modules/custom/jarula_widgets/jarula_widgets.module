@@ -829,6 +829,10 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 			                        }
 
 			                        $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $card['entity']->field_status['und'][0]['value'])));
+
+						drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.flexslider-min.js', array('scope' => 'footer'));
+	                                        drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.easing.js', array('scope' => 'footer'));
+
                     			}
 
 					$widget_custom_card_list[] = array('title' => $card['entity']->title, 'street' => $street, 'image' => $image, 'status' => $status, 'destination' => $destination);
