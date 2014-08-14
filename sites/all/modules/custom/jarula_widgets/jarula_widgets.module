@@ -808,7 +808,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 					$eid = $card['entity']->field_slide['und'][0]['value'];
 					$uri = entity_load('field_collection_item', array($eid));
-					$uri = $card->field_image['und'][0]['uri'];
+					$uri = $uri[$eid]->field_image['und'][0]['uri'];
                                         $image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $uri, 'alt' => $card['entity']->title));
 
 					if (isset($card['entity']->field_status['und'][0])) {
