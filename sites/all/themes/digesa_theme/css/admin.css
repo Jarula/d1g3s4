@@ -1,0 +1,83 @@
+.quickbar-enabled div#quickbar {
+  z-index: 10000;
+}
+
+.quickbar-enabled div#quickbar div.depth-0 {
+  height: auto;
+}
+
+.custom-admin.quickbar-enabled .custom-form-wrapper {
+  background-color: #000000;
+  margin-bottom: 1em;
+}
+
+.custom-admin.quickbar-enabled .form-item,
+.custom-admin.quickbar-enabled .pane-entity-form-field {
+  margin-bottom: 1em;
+}
+
+.custom-admin.quickbar-enabled input,
+.custom-admin.quickbar-enabled textarea {
+  padding: 5px 6px;
+  box-sizing: border-box;
+  line-height: normal;
+  margin: 0;
+  border: solid 1px #666;
+  font-size: 0.9em;
+  width: 100%;
+}
+
+.custom-admin.quickbar-enabled label {
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 0.9em;
+  box-sizing: border-box;
+}
+
+.custom-admin.quickbar-enabled .form-radios {
+  display: inline-table;
+}
+
+.custom-admin.quickbar-enabled .form-radios .form-item {
+  margin-bottom: 0.2em;
+}
+
+.custom-admin.quickbar-enabled .form-managed-file div {
+  float: none;
+}
+
+.custom-admin.quickbar-enabled .form-managed-file .form-file {
+  width: 70%;
+}
+
+.custom-admin.quickbar-enabled .form-managed-file .form-submit {
+  width: 30%;
+}
+
+.custom-admin.quickbar-enabled .custom-form-wrapper input,
+.custom-admin.quickbar-enabled .custom-form-wrapper textarea {
+  background: #ffffff none;
+}
+
+.custom-admin.quickbar-enabled .custom-form-wrapper label {
+  color: #ffffff;
+}
+
+.custom-admin.quickbar-enabled table {
+  width: 100%;
+}
+
+.custom-admin.quickbar-enabled table thead th {
+  background-color: transparent;
+}
+
+.custom-admin.quickbar-enabled table tbody tr {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.custom-admin.quickbar-enabled table tbody label {
+  color: #333333 !important;
+}
