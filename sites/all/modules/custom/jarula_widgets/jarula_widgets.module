@@ -383,7 +383,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 					for($i=0;$i<1;$i++){
                                                 $key = $result->field_field_slide[0]['raw']['value'];
-						$uri = $result->field_field_slide[0]['rendered']['entity']['field_collection_item'][$key]['field_image']['#items'][0]['uri'];
+						$uri = $result->field_field_slide[0]['rendered']['entity']['field_collection_item'][$key]['field_slide_image']['#items'][0]['uri'];
                                         }
 					$image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $uri, 'alt' => $title));
 
@@ -448,6 +448,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 				$currentNode = $entity['field_currentnode'][0]['#markup'];
 				$slideArray = $entity['field_slide'];
+
 				if (arg(0) == 'node' && is_numeric(arg(1))) {
 					$nid = true;
 				}
@@ -459,7 +460,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					foreach($slideshow as $slide ) {
 						$item = field_collection_item_load(array($slide['value']));
 
-						$image = field_get_items('field_collection_item', $item, 'field_image');
+						$image = field_get_items('field_collection_item', $item, 'field_slide_image');
 						$image = isset($image[0]) ? $image[0] : NULL;
 
 						$thumbnail = image_style_url('thumnail_slider',$image['uri']);
@@ -506,7 +507,6 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                                 );
 
 					}
-//dsm($slideItems);
 					$widget_slider = 'widget_slider_node';
 
 	                                drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.flexslider-min.js', array('scope' => 'footer'));
@@ -518,8 +518,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 						if(is_numeric($slide)){
 							$itemsArray = $entity['field_slide'][$slide]['entity']['field_collection_item'];
 							foreach($itemsArray as $item){
-		
-								$image = $item['field_image']['#items'][0];
+								$image = $item['field_slide_image']['#items'][0];
 								$image = file_create_url($image['uri']);
 
 								$slideItems[] = array(
