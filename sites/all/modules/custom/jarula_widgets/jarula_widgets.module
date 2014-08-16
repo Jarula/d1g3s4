@@ -474,63 +474,70 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					$node = node_load(arg(1));
 
 					$slideshow = field_get_items('node', $node, 'field_slide');
-					foreach($slideshow as $slide ) {
-						$item = field_collection_item_load(array($slide['value']));
+					$exist = field_collection_item_load(array($slideshow[0]['value']));
+					$exist = $exist->field_slide_image['und'][0];
 
-						$image = field_get_items('field_collection_item', $item, 'field_slide_image');
-						$image = isset($image[0]) ? $image[0] : NULL;
+					if (isset($exist)) {
 
-						$thumbnail = image_style_url('thumnail_slider',$image['uri']);
+						foreach($slideshow as $slide ) {
+							$item = field_collection_item_load(array($slide['value']));
 
-                                                $image = array(
-                                                      'style_name' => 'big_wide_600',
-                                                      'path' => $image['uri'],
-                                                      'alt' => $image['alt'],
-                                                      'title' => $image['title'],
-                                                );
-                                                $image = theme('image_style', $image);
+							$image = field_get_items('field_collection_item', $item, 'field_slide_image');
+							$image = isset($image[0]) ? $image[0] : NULL;
 
-						$type = field_get_items('field_collection_item', $item, 'field_slidetype');
-						$type = isset($type[0]['value']) ? $type[0]['value'] : NULL;
-                                                $type = 'type-'.strtolower($type);
+							$thumbnail = image_style_url('thumnail_slider',$image['uri']);
 
-						$title = field_get_items('field_collection_item', $item, 'title_field');
-						$title = isset($title[0]['safe_value']) ? $title[0]['safe_value'] : NULL;
+        	                                        $image = array(
+	                                                      'style_name' => 'big_wide_600',
+                                                	      'path' => $image['uri'],
+                                        	              'alt' => $image['alt'],
+                                	                      'title' => $image['title'],
+                        	                        );
+                	                                $image = theme('image_style', $image);
 
-						$description = field_get_items('field_collection_item', $item, 'field_description');
-						$description = isset($description[0]['safe_value']) ? $description[0]['safe_value'] : NULL;
+							$type = field_get_items('field_collection_item', $item, 'field_slidetype');
+							$type = isset($type[0]['value']) ? $type[0]['value'] : NULL;
+                                                	$type = 'type-'.strtolower($type);
 
-						$link = field_get_items('field_collection_item', $item, 'field_href');
-						$link = isset($link[0]['url']) ? $link[0]['url'] : NULL;
+							$title = field_get_items('field_collection_item', $item, 'title_field');
+							$title = isset($title[0]['safe_value']) ? $title[0]['safe_value'] : NULL;
 
-                                                $vid = field_get_items('field_collection_item', $item, 'field_video');
-                                                $vid = isset($vid[0]['safe_value']) ? $vid[0]['safe_value'] : NULL;
-                                                $vid = explode('v=', $vid);
-						$vid = $vid[1];
+							$description = field_get_items('field_collection_item', $item, 'field_description');
+							$description = isset($description[0]['safe_value']) ? $description[0]['safe_value'] : NULL;
+
+							$link = field_get_items('field_collection_item', $item, 'field_href');
+							$link = isset($link[0]['url']) ? $link[0]['url'] : NULL;
+
+                        	                        $vid = field_get_items('field_collection_item', $item, 'field_video');
+                	                                $vid = isset($vid[0]['safe_value']) ? $vid[0]['safe_value'] : NULL;
+        	                                        $vid = explode('v=', $vid);
+							$vid = $vid[1];
+		
+							$video = "<iframe width='1280' height='720' src='//www.youtube.com/embed/{$vid}?rel=0' frameborder='0' allowfullscreen></iframe>";
+							$preview = "http://img.youtube.com/vi/{$vid}/0.jpg";
 						
-						$video = "<iframe width='1280' height='720' src='//www.youtube.com/embed/{$vid}?rel=0' frameborder='0' allowfullscreen></iframe>";
-						$preview = "http://img.youtube.com/vi/{$vid}/0.jpg";
-						
 
-                                                $slideItems[] = array(
-	                                                'type' => $type,
-                                                        'image' => $image,
-                                                        'title' => $title,
-                                                        'description' => $description,
-							'thumbnail' => $thumbnail,
-                                                        'link' => ($link) ? url($link, array('absolute' => true)) : NULL,
-							'video' => $video,
-							'preview' => $preview
-                                                );
+        	                                        $slideItems[] = array(
+		                                                'type' => $type,
+                                                        	'image' => $image,
+                                                	        'title' => $title,
+                                        	                'description' => $description,
+								'thumbnail' => $thumbnail,
+                        	                                'link' => ($link) ? url($link, array('absolute' => true)) : NULL,
+								'video' => $video,
+								'preview' => $preview
+	                                                );
 
+						}
+
+	                	                drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.flexslider-min.js', array('scope' => 'footer'));
+        		                        drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.easing.js', array('scope' => 'footer'));
+
+						$vars['content'] = theme('widget_slider_node', array('widget_slider' => $slideItems));
+					} else {
+						$vars['content'] = NULL;
 					}
-
-	                                drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.flexslider-min.js', array('scope' => 'footer'));
-        	                        drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.easing.js', array('scope' => 'footer'));
-				}
-
-			if(isset($slideItems)) {
-				$vars['content'] = theme('widget_slider_node', array('widget_slider' => $slideItems));
+				
 			} else {
 				$vars['content'] = 'No hay contenido para mostrar';
 			}
