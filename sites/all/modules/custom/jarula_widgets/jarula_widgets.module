@@ -513,19 +513,13 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
         	                        drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.easing.js', array('scope' => 'footer'));
 
 				} else {
+					$vars['title'] = '';
 					foreach($slideArray as $slide) {
 						if(is_numeric($slide)){
 							$itemsArray = $entity['field_slide'][$slide]['entity']['field_collection_item'];
 							foreach($itemsArray as $item){
 		
 								$image = $item['field_image']['#items'][0];
-//								$image = array(
-//									'style_name' => 'big_wide',
-//									'path' => $image['uri'],
-//									'alt' => $image['alt'],
-//									'title' => $image['title'],
-//								);
-//								$image = theme('image_style', $image);
 								$image = file_create_url($image['uri']);
 
 								$slideItems[] = array(
@@ -797,6 +791,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 			break;
 
 			case 'widget_custom_card_list':
+				$vars['title'] = '';
 
 				foreach ($entity['field_custom_list_card']['#items'] as $key => $card) {
 
