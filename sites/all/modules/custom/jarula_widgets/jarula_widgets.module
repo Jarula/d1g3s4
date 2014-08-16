@@ -381,32 +381,31 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 						$street = $adress['rendered']['entity']['field_collection_item'][$key]['field_street']['#items'][0]['safe_value'];
 					}
 
-					for($i=0;$i<1;$i++){
-                                                $key = $result->field_field_slide[0]['raw']['value'];
-						$uri = $result->field_field_slide[0]['rendered']['entity']['field_collection_item'][$key]['field_slide_image']['#items'][0]['uri'];
-                                        }
-					$image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $uri, 'alt' => $title));
+					$image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $result->field_field_thumbnail_image[0]['raw']['uri'], 'alt' => $title));
 
 					if (isset($result->field_field_status[0]['rendered']['#markup'])) {
-                        $status_type = $result->field_field_status[0]['rendered']['#markup'];
-                        switch ($status_type) {
-                            case '100% vendido':
-                                $status_type = "label light_green";
-                                break;
-                            case 'Últimas unidades':
-                                $status_type = "label yellow";
-                                break;
-                            case 'Nuevo':
-                                $status_type = "label dark_green";
-                                break;
-                            case 'Más solicitado':
-                                $status_type = "label blue";
-                                break;
-                        }
+			                        $status_type = $result->field_field_status[0]['rendered']['#markup'];
+                        			switch ($status_type) {
+			                            case '100% vendido':
+                        			        $status_type = "label light_green";
+			                                break;
+                        			    case 'Últimas unidades':
+			                                $status_type = "label yellow";
+                        			        break;
+			                            case 'Nuevo':
+                        			        $status_type = "label dark_green";
+			                                break;
+                        			    case 'Más solicitado':
+			                                $status_type = "label blue";
+                        			        break;
+			                        }
 
-
-                        $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $result->field_field_status[0]['rendered']['#markup'])));
-                    }
+						if ($status_type != 'Ninguno') {
+				                        $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $result->field_field_status[0]['rendered']['#markup'])));
+						} else {
+							$status = NULL;
+						}
+			                }
 
 					$destination = url('node/'.$result->nid);
 
@@ -430,7 +429,11 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 				$info = field_get_items('node', $node, 'field_info');
 				$info = isset($info[0]['value']) ? $info[0]['value'] : NULL;
 				$status = field_get_items('node', $node, 'field_status');
+				if ($status[0]['value'] != 'Ninguno') {
 				$status = isset($status[0]['value']) ? theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => 'label'),'#value' => $status[0]['value']))) : NULL;
+				} else {
+				$status = NULL;
+				}
 				$address = field_get_items('node', $node, 'field_address');
 				foreach($address as $street) {
                                 	$eid = $street['value'];
@@ -769,7 +772,11 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 						break;
 					}
 
-					$status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $status)));
+                                        if ($status_type != 'Ninguno') {
+                                                $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $result->field_field_status[0]['rendered']['#markup'])));
+                                        } else {
+                                                $status = NULL;
+                                        }
 
 					$imageID = $node->field_slide['und'][0]['value']; 
 					$image = entity_load('field_collection_item', array($imageID));
@@ -800,10 +807,12 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 
 					$destination = url('node/'.$card['entity']->nid);
 
-					$eid = $card['entity']->field_slide['und'][0]['value'];
-					$uri = entity_load('field_collection_item', array($eid));
-					$uri = $uri[$eid]->field_image['und'][0]['uri'];
-                                        $image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $uri, 'alt' => $card['entity']->title));
+					if (isset($card['entity']->field_thumbnail_image['und'][0])) {
+						$image = $card['entity']->field_thumbnail_image['und'][0]['uri'];
+					} else {
+						$image = 'default_images/tbnl-generica.jpg';
+					}
+                                        $image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $image, 'alt' => $card['entity']->title));
 
 					if (isset($card['entity']->field_status['und'][0])) {
 			                        $status_type = $card['entity']->field_status['und'][0]['value'];
@@ -822,7 +831,11 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 		        	                        break;
 			                        }
 
-			                        $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $card['entity']->field_status['und'][0]['value'])));
+                                                if ($status_type != 'Ninguno') {
+                                                        $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $result->field_field_status[0]['rendered']['#markup'])));
+                                                } else {
+                                                        $status = NULL;
+                                                }
 
 						drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.flexslider-min.js', array('scope' => 'footer'));
 	                                        drupal_add_js(drupal_get_path('module', 'jarula_widgets') . '/js/widget_slideshow/jquery.easing.js', array('scope' => 'footer'));
