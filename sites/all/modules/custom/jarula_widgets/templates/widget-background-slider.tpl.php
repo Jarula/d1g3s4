@@ -1,6 +1,6 @@
 <div class="fluid_container">
   <div class="camera_wrap camera_emboss pattern_1" id="background-slider">
-    <?php foreach($widget_slider as $item) { ?>
+    <?php foreach($widget_background_slider as $item) { ?>
     <div data-thumb="<?php print $item['image']; ?>" data-src="<?php print $item['image']; ?>"></div>
     <?php } ?>
   </div>
