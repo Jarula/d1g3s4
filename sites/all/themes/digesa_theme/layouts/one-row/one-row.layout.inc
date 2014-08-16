@@ -8,5 +8,5 @@ admin css = ../../../unsemantic_theme/unsemantic-master/assets/stylesheets/unsem
 ; Regions
 
 ; ---- Content
-regions[content]       = Content
-regions[widget]       = Widget
+regions[content]      = Imagenes de Fondo
+regions[widget]       = Propiedades Destacadas
