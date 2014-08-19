@@ -167,7 +167,7 @@ footer {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 0;
+  z-index: -1;
 }
 
 #background-slider {
@@ -361,6 +361,13 @@ footer {
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   pointer-events: none;
+}
+
+.front .pane-bundle-widget-link {
+  bottom: 160px;
+  display: block;
+  overflow: hidden;
+  position: absolute;
 }
 
 /* QUIENES SOMOS */
