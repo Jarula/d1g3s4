@@ -432,15 +432,18 @@ footer {
     height: 160px !important;
 }
 
-.pane-bundle-widget-itemslist {
+.pane-bundle-widget-itemslist,
+.pane-bundle-widget-search {
     margin-top: 30px;
 }
 
-.pane-bundle-widget-itemslist article {
+.pane-bundle-widget-itemslist article,
+.pane-bundle-widget-search article {
     margin-bottom: 30px;
 }
 
-.pane-bundle-widget-itemslist article a {
+.pane-bundle-widget-itemslist article a,
+.pane-bundle-widget-search article a {
     background-color: #000;
     display: block;
     position: relative;
@@ -448,7 +451,8 @@ footer {
 }
 
 .pane-bundle-widget-profile h2,
-.pane-bundle-widget-itemslist h1 {
+.pane-bundle-widget-itemslist h1,
+.pane-bundle-widget-search h1 {
     font-family: 'Oswald';
     font-weight: 300;
     text-transform: uppercase;
@@ -459,7 +463,8 @@ footer {
     margin-bottom: 0;
 }
 
-.pane-bundle-widget-itemslist h1 {
+.pane-bundle-widget-itemslist h1,
+.pane-bundle-widget-search h1 {
     padding-top: 0;
     padding-left: 15px;
     text-decoration: none;
@@ -467,7 +472,8 @@ footer {
 
 .pane-bundle-widget-profile h3,
 .pane-bundle-widget-profile p,
-.pane-bundle-widget-itemslist p {
+.pane-bundle-widget-itemslist p,
+.pane-bundle-widget-search p {
     font-family: 'Oswald';
     font-size: 24px;
     margin: 0 10px 0 10px;
@@ -481,7 +487,8 @@ footer {
 }
 
 .pane-bundle-widget-profile p,
-.pane-bundle-widget-itemslist p {
+.pane-bundle-widget-itemslist p,
+.pane-bundle-widget-search p {
     color: #fff;
     margin-top: 10px;
     margin-bottom: 0;
@@ -489,17 +496,20 @@ footer {
     text-transform: uppercase;
 }
 
-.pane-bundle-widget-itemslist p {
+.pane-bundle-widget-itemslist p,
+.pane-bundle-widget-search p {
     margin: 0;
     padding: 10px 10px 30px 15px;
     text-decoration: none;
 }
 
-.pane-bundle-widget-itemslist img {
+.pane-bundle-widget-itemslist img,
+.pane-bundle-widget-search img {
     height: 200px !important;
 }
 
-.pane-bundle-widget-itemslist span.label {
+.pane-bundle-widget-itemslist span.label,
+.pane-bundle-widget-search span.label {
   background-color: #799f28;
   color: #fff;
   font-family: 'Oxygen';
