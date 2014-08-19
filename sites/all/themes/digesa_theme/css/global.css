@@ -1223,3 +1223,20 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   opacity: 0.5;
   z-index: -10;
 }
+
+/* SEARCH */
+
+.section-buscar h2 {
+  margin-left: 0 !important;
+  padding-left: 0;
+}
+
+.facetapi-inactive {
+  color: #fff;
+  display: block;
+  margin-top: 10px;
+}
+
+  .section-buscar a:hover {
+    color: #fff;
+  }
