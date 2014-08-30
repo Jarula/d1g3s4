@@ -320,7 +320,8 @@ footer {
 
 /* WIDGET LINK */
 
-.front .pane-bundle-widget-link {
+.front .pane-bundle-widget-link,
+.front .pane-bundle-widget-custom-card-list {
   bottom: 160px;
   display: block;
   height: 200px;
@@ -329,20 +330,23 @@ footer {
   width: 100%;
 }
 
-.front .pane-bundle-widget-link .link-item-container {
+.front .pane-bundle-widget-link .link-item-container,
+.front .pane-bundle-widget-custom-card-list .link-item-container {
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
   width: 70%;
 }
 
-.front .pane-bundle-widget-link .link-item {
+.front .pane-bundle-widget-link .link-item,
+.front .pane-bundle-widget-custom-card-list .link-item {
 	margin-top: 20px;
   position: relative;
   z-index: 2;
 }
 
-.front .pane-bundle-widget-link .link-item-background {
+.front .pane-bundle-widget-link .link-item-background,
+.front .pane-bundle-widget-custom-card-list .link-item-background {
   background-color: #000;
   height: 100%;
   left: 0;
@@ -352,7 +356,8 @@ footer {
   width: 100%;
 }
 
-.pane-bundle-widget-link .link-item .title {
+.pane-bundle-widget-link .link-item .title,
+.front .pane-bundle-widget-custom-card-list .link-item .title {
   font-family: 'Oswald';
   font-size: 18px;
   font-weight: 300;
@@ -381,7 +386,8 @@ footer {
   -moz-transition: all 0.2s ease-in-out;
 }
 
-.pane-bundle-widget-link .link-item:hover .title {
+.pane-bundle-widget-link .link-item:hover .title,
+.front .pane-bundle-widget-custom-card-list .link-item:hover .title {
   padding: 12% 0 10% 0;
   color: #ffffff;
   border-top-width: 8px;
