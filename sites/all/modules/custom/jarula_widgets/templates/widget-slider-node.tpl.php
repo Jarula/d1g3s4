@@ -1,7 +1,6 @@
 <div class="flexslider">
   <div class="flex-bar">
     <div class="flex-thumbnails">Thumbnails</div>
-    <div class="flex-fullscreen">Fullscreen</div>
   </div>
   <ul class="slides">
     <?php foreach($widget_slider as $item) {
@@ -27,15 +26,6 @@
       nextText: 'Siguiente',
       start: function(slider) {
         jQuery( "body" ).removeClass('loading');
-
-        jQuery( ".flex-fullscreen" ).toggle(
-          function() {
-            jQuery( ".pane-bundle-widget-slider" ).addClass( "fullscreen" );
-          }, function() {
-            jQuery( ".pane-bundle-widget-slider" ).removeClass( "fullscreen" );
-          }
-        );
-
 
         //Thumbnails
         jQuery( ".flex-thumbnails" ).toggle(

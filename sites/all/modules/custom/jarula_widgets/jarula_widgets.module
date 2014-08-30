@@ -490,10 +490,13 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
         	                                        $image = array(
 	                                                      'style_name' => 'big_wide_600',
                                                 	      'path' => $image['uri'],
-                                        	              'alt' => $image['alt'],
-                                	                      'title' => $image['title'],
+                                        	              'alt' => 'Click para ampliar',
+                                	                      'title' => 'Click para ampliar',
                         	                        );
+							$imageBig = file_create_url($image['path']);
                 	                                $image = theme('image_style', $image);
+
+							$image = l($image, $imageBig, array('attributes' => array('class' => 'colorbox-load', 'rel' => 'gallery'), 'html' => TRUE));
 
 							$type = field_get_items('field_collection_item', $item, 'field_slidetype');
 							$type = isset($type[0]['value']) ? $type[0]['value'] : NULL;
@@ -751,6 +754,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					$street = $street[$streetID]->field_street['und'][0]['safe_value'];
 
 					$status = $node->field_status['und'][0]['value'];
+
 					switch ($status) {
 						case '100% vendido':
 							$status_type = "label light_green";
@@ -764,10 +768,11 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 						case 'Más solicitado':
 							$status_type = "label blue";
 						break;
+
 					}
 
-                                        if ($status_type != 'Ninguno') {
-                                                $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $result->field_field_status[0]['rendered']['#markup'])));
+                                        if ($status != 'Ninguno') {
+                                                $status = theme('html_tag', array('element' => array('#tag' => 'span','#attributes' => array('class' => $status_type),'#value' => $status)));
                                         } else {
                                                 $status = NULL;
                                         }
@@ -775,7 +780,14 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 					$imageID = $node->field_slide['und'][0]['value']; 
 					$image = entity_load('field_collection_item', array($imageID));
 					$image = $image[$imageID]->field_image['und'][0];
-					$image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $image['uri'], 'alt' => $node->title));
+
+					if (isset($image)) {
+						$image = $image['uri'];
+                                        } else {
+                                                $image = 'default_images/tbnl-generica.jpg';
+                                        }
+
+					$image = theme('image_style', array('style_name' => 'medium_wide', 'path' => $image, 'alt' => $node->title));
 
 					$widget_search[] = array(
 								'title' =>$node->title,
