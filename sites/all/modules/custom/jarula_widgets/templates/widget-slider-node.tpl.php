@@ -22,8 +22,8 @@
       pausePlay: true,
       smoothHeight: true,
       pauseOnAction: true,
-      prevText: 'Anterior',
-      nextText: 'Siguiente',
+      prevText: '',
+      nextText: '',
       start: function(slider) {
         jQuery( "body" ).removeClass('loading');
 

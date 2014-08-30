@@ -777,9 +777,7 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
                                                 $status = NULL;
                                         }
 
-					$imageID = $node->field_slide['und'][0]['value']; 
-					$image = entity_load('field_collection_item', array($imageID));
-					$image = $image[$imageID]->field_image['und'][0];
+					$image = $node->field_thumbnail_image['und'][0];
 
 					if (isset($image)) {
 						$image = $image['uri'];
