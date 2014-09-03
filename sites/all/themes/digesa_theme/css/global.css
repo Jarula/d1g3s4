@@ -341,7 +341,7 @@ footer {
 .front .pane-bundle-widget-custom-card-list {
   bottom: 95px;
   display: block;
-  height: 240px;
+  height: 240px !important;
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -372,6 +372,7 @@ footer {
 
 .front .pane-bundle-widget-link .link-item,
 .front .pane-bundle-widget-custom-card-list .link-item {
+  height: 186px;
   margin: 20px 0 0;
   padding: 0 5px;
   position: relative;
@@ -433,6 +434,11 @@ footer {
   height: 25px;
   margin-bottom: 10px;
   padding-top: 0;
+}
+
+.front .pane-bundle-widget-custom-card-list h1,
+.front .pane-bundle-widget-custom-card-list p {
+  text-decoration: none;
 }
 
 /*.pane-bundle-widget-link .link-item:hover .title,
