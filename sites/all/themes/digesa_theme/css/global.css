@@ -400,6 +400,19 @@ footer {
   position: relative;
 }
 
+.front .pane-bundle-widget-custom-card-list a:hover {
+  color: #ffc700;
+  text-decoration: none;
+}
+
+.front .pane-bundle-widget-custom-card-list a:hover .card-list-info {
+  background-color: #222;
+}
+
+.front .pane-bundle-widget-custom-card-list a:hover h1 {
+  color: #ffc700;
+}
+
 /*.front .pane-bundle-widget-custom-card-list .card-list-info {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -417,7 +430,7 @@ footer {
   border-top-width: 0;
   border-top-style: solid;
   border-top-color: #ccf700;
-  color: #ffc700;
+  color: #fff;
   font-family: 'Oswald';
   font-size: 18px;
   font-weight: 300;
@@ -436,9 +449,13 @@ footer {
   padding-top: 0;
 }
 
-.front .pane-bundle-widget-custom-card-list h1,
-.front .pane-bundle-widget-custom-card-list p {
+.front .pane-bundle-widget-custom-card-list h1:hover,
+.front .pane-bundle-widget-custom-card-list p:hover {
   text-decoration: none;
+}
+
+.front .pane-bundle-widget-custom-card-list h1:hover {
+  color: #ffc700;
 }
 
 /*.pane-bundle-widget-link .link-item:hover .title,
