@@ -100,6 +100,15 @@ ul.breadcrumb li a:hover {
         url('../font/fontello.svg?3786050#fontello') format('svg');
     font-weight: normal;
     font-style: normal;
+
+    font-family: 'digesa-lightbox';
+    src: url('../font/digesa-lightbox.eot?39039647');
+    src: url('../font/digesa-lightbox.eot?39039647#iefix') format('embedded-opentype'),
+        url('../font/digesa-lightbox.woff?39039647') format('woff'),
+        url('../font/digesa-lightbox.ttf?39039647') format('truetype'),
+        url('../font/digesa-lightbox.svg?39039647#digesa-lightbox') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
  
 [class^="icon-"]:before, [class*=" icon-"]:before {
@@ -756,13 +765,13 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   top: 3px;
   color: #fff;
   cursor: pointer;
-  font-family: 'fontello';
+  font-family: 'digesa-lightbox';
   height: 20px;
   width: 20px;
 }
 
 .flex-control-thumbs .thumbs-close:before {
-  content: '\e804';
+  content: '\e705';
 }
 
 .flex-control-thumbs li {
@@ -859,7 +868,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 .pane-bundle-widget-slider .flex-pauseplay .flex-pause:before,
 .pane-bundle-widget-slider .flex-pauseplay .flex-play:before {
     color: #fff;
-    font-family: "fontello";
+    font-family: "digesa-lightbox";
     font-size: 18px;
     position: absolute;
     text-align: center;
@@ -875,25 +884,25 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 }
 
 .pane-bundle-widget-slider .flex-thumbnails:before {
-    content: '\e800';
+    content: '\e700';
 }
 
 .pane-bundle-widget-slider .flex-fullscreen:before {
-    content: '\e801';
+    content: '\e703';
 }
 
 .pane-bundle-widget-slider .flex-pauseplay .flex-pause:before {
-    content: '\e803';
+    content: '\e701';
     font-size: 25px;
 }
 
 .pane-bundle-widget-slider .flex-pauseplay .flex-play:before {
-    content: '\e802';
+    content: '\e702';
     font-size: 25px;
 }
 
 .pane-bundle-widget-slider.fullscreen .flex-fullscreen:before {
-    content: '\e802';
+    content: '\e704';
 }
 
 /* CONTACTO */
