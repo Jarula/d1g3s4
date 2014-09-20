@@ -81,3 +81,7 @@
 .custom-admin.quickbar-enabled table tbody label {
   color: #333333 !important;
 }
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-dialog-buttons {
+  z-index: 1002;
+}

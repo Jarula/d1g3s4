@@ -2078,3 +2078,8 @@ div.krumo-wrapper ul {
 div.krumo-wrapper li {
   list-style: none outside none;
 }
+
+/* Custom */
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-dialog-buttons {
+  z-index: 1002;
+}
