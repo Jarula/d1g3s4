@@ -371,18 +371,23 @@ function jarula_widgets_preprocess_panels_pane(&$vars) {
 			case 'widget_itemslist':
 
 				$view = views_get_view('jarula_widgets');
-				$view->set_display('items_list');
+
 				if($entity['field_widgettype']['#items'][0]['value'] != '0') {
+
+	                                $cards = $entity['field_propiedad']['#items'];
+        	                        foreach ($cards as $card) {
+                	                        $nodes[] = $card['target_id'];
+                        	        }
+					$nodes = implode($nodes, ',');
+
+					$view->set_display('related_items_list');
 					$nid = arg(1);
-					$view->set_arguments(array($nid, 'all'));
+					$view->set_arguments(array($nid, $nodes));
 					$view->set_items_per_page(3);
 				} else {
+                                        $view->set_display('items_list');
 					$tid = arg(2);
 					$view->set_arguments(array('all', $tid));
-				}
-                                if($entity['field_widgettype']['#items'][0]['value'] != '0') {
-					$view->pre_execute();
-					$view->sort = array_reverse($view->sort, true);
 				}
 				$view->execute();
 
