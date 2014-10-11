@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Theme settings file for the Unsemantic theme.
+ * Theme settings file for the Unsemantic Theme theme.
  */
 
 require_once dirname(__FILE__) . '/template.php';

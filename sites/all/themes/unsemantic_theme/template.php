@@ -41,8 +41,7 @@ $ie = array(
     'rel' => 'stylesheet',
     'type' => 'text/css',
   ),
-  //'#prefix' => '<!--[if (lt IE 9) & (!IEMobile)]',
-    '#prefix' => '<!--[if (IE 7) | (IE 8)]>',
+  '#prefix' => '<!--[if (lt IE 9) & (!IEMobile)]',
   '#suffix' => '<![endif]-->',
 );
 drupal_add_html_head($ie, 'ie');

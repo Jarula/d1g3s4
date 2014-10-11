@@ -184,7 +184,7 @@ svg {
 }
 
 body {
-  font: 13px/1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  font: 13px / 1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
 }
 
 pre,
@@ -193,7 +193,7 @@ code {
 }
 
 hr {
-  border: 0 #cccccc solid;
+  border: 0 #ccc solid;
   border-top-width: 1px;
   clear: both;
   height: 0;
@@ -256,7 +256,7 @@ figure {
 
 body {
   background: white;
-  color: #333333;
+  color: #333;
   text-align: center;
 }
 
@@ -273,12 +273,16 @@ h1 {
 }
 
 .example-block {
-  background: #eeeeee;
+  background: #eee;
   font-size: 10px;
   overflow: hidden;
   margin-bottom: 20px;
   padding: 10px 0;
   text-align: center;
+}
+
+.grid-container {
+  padding-bottom: 20px;
 }
 
 .grid-container > hr {
@@ -287,11 +291,11 @@ h1 {
 }
 
 div[class*="push-"] section {
-  background: #ddeecc;
+  background: #dec;
 }
 
 div[class*="pull-"] section {
-  background: #ffccdd;
+  background: #fcd;
 }
 
 .dynamic-px-width {
