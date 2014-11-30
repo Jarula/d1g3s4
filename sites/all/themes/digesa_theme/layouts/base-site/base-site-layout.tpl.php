@@ -5,10 +5,10 @@
 				<?php print render($page['header_logo']); ?>
 			</div>
 			<div class="grid-80 mobile-grid-100">
-				<div class="grid-100 grid-parent search-bar">
+				<div class="grid-100 grid-parent search-bar mobile-grid-75 mobile-prefix-25">
 					<?php print render($page['header_search']); ?>
 				</div>
-				<nav id="main-menu" class="grid-100 grid-parent menu">
+				<nav id="main-menu" class="grid-100 grid-parent menu mobile-grid-25 mobile-suffix-75">
 					<?php print render($page['header_menu']); ?>
 				</nav>
 			</div>

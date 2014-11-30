@@ -1,0 +1,111 @@
+.pane-page-logo {
+background-color: #FCC900;
+}
+.pane-page-logo img {
+width: 60%;
+margin: 0 20%;
+}
+.search-bar {
+margin-top: 1em;
+margin-bottom: 1em;
+}
+.search-bar input.form-text {
+width: 100%;
+margin: 0.2em 0;
+font-size: 1em;
+}
+#sidr-wrapper-0 a {
+position: absolute;
+top: 8em;
+left: 1em;
+width: 25%;
+text-decoration: none;
+color: #bababa;
+font-family: 'Oswald';
+font-weight: 300;
+text-transform: uppercase;
+}
+#sidr-wrapper-0 a:before {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+content: "\f0c9";
+margin: 0 0.4em 0 0;
+display: inline-block;
+font: normal normal normal 14px/1 FontAwesome;
+font-size: inherit;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.footer-copyright p {
+font-size: 0.9em;
+}
+.footer-copyright p img {
+display: block;
+margin: 0 auto 1em auto;
+}
+.footer-menu {
+display: none;
+}
+.pane-bundle-widget-profile h3 {
+padding-top: 1em;
+}
+.pane-bundle-widget-profile h3,
+.pane-bundle-widget-profile p {
+padding-left: 0;
+padding-right: 0;
+}
+.pane-bundle-widget-info {
+height: auto;
+padding-bottom: 0.5em;
+}
+.pane-bundle-widget-info p {
+font-size: 1em;
+line-height: normal;
+}
+.flex-bar,
+.flex-pauseplay {
+display: none;
+}
+.flex-direction-nav {
+top: 38%;
+}
+.widget-sketch-wrapper {
+margin: 0 10px 10px;
+display: block;
+}
+.widget-sketch-wrapper .grid-25 span {
+line-height: normal;
+display: block;
+}
+.widget-sketch-wrapper .container a {
+display: inline-block;
+width: 30%;
+}
+.widget-sketch-wrapper .container a  img {
+width: 100%
+}
+.section-ventas-y-alquileres .field__items .field__item,
+.section-obras .field__items .field__item,
+.section-proyectos-futuros .field__items .field__item {
+font-size: 1em;
+display: block;
+line-height: normal;
+}
+.section-ventas-y-alquileres .pane-bundle-widget-form h2,
+.section-obras .pane-bundle-widget-form h2,
+.section-proyectos-futuros .pane-bundle-widget-form h2 {
+line-height: normal;
+}
+.section-ventas-y-alquileres .pane-node-field-more .field__items {
+-webkit-column-count: 1;
+-moz-column-count: 1;
+column-count: 1;
+}
+.pane-page-title h1 {
+line-height: normal;
+}
+.section-buscar .pane-page-content .pane-block ul a {
+text-decoration: none;
+}
