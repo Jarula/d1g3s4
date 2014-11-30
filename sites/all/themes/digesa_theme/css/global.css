@@ -978,10 +978,12 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
 
 .section-contacto .widget-text p + p {
   margin-top: 9px;
+  margin-bottom: 0;
 }
 
 .section-contacto .widget-text .direction {
   font-size: 14px;
+  margin: 0;
 }
 
 .section-contacto .pane-node-body,
@@ -1013,6 +1015,7 @@ body.loading .pane-bundle-widget-slider .flexslider .flex-pauseplay {
   line-height: 20px;
   margin: 0 10px 35px 50px;
   text-align: left;
+  text-decoration: none;
 }
 
 .section-contacto .pane-1 img {
